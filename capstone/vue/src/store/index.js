@@ -18,6 +18,7 @@ if(currentToken != null) {
 
 export default new Vuex.Store({
   state: {
+    filter: "All",
     token: currentToken || '',
     user: currentUser || {}
   },
@@ -37,6 +38,9 @@ export default new Vuex.Store({
       state.token = '';
       state.user = {};
       axios.defaults.headers.common = {};
-    }
+    },
+    UPDATE_FILTER(state, filter) {
+      state.filter = filter;
+    },
   }
 })
