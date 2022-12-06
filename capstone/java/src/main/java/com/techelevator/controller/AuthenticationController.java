@@ -60,5 +60,10 @@ public class AuthenticationController {
         }
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
+    @RequestMapping(value = "/submit", method = RequestMethod.POST)
+    public boolean submitVolunteerApp(@Valid User volunteerApplication) {
+        return userDao.submitVolunteerApp(volunteerApplication);
+    }
 }
 
