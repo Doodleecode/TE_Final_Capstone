@@ -1,5 +1,6 @@
 package com.techelevator.dao;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -12,6 +13,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import com.techelevator.model.User;
+
+import javax.print.attribute.standard.DateTimeAtCompleted;
 
 @Component
 public class JdbcUserDao implements UserDao {
@@ -80,6 +83,11 @@ public class JdbcUserDao implements UserDao {
         String ssRole = role.toUpperCase().startsWith("ROLE_") ? role.toUpperCase() : "ROLE_" + role.toUpperCase();
 
         return jdbcTemplate.update(insertUserSql, username, password_hash, ssRole) == 1;
+    }
+
+    public boolean submitVolunteerApp(User volunteerApplication) {
+        String insertAppSql = "INSERT INTO application (contact_id, status_id, weekly_hours, is_day, preferred_animal, reason, time_registered) values (?, ?, ?, ?, ?, ?, ?)";
+        return jdbcTemplate.update(insertAppSql) == 1;
     }
 
     private User mapRowToUser(SqlRowSet rs) {
