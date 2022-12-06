@@ -56,7 +56,7 @@ CREATE TABLE application (
 	status_id varchar(1) NOT NULL REFERENCES status (status_id),
 	weekly_hours int NOT NULL,
 	is_day boolean NOT NULL,
-	prefered_animal varchar(10) NOT NULL,
+	preferred_animal varchar(10) NOT NULL,
 	reason varchar(1000) NOT NULL,
 	time_registered timestamp DEFAULT NOW(),		
 	CONSTRAINT PK_application PRIMARY KEY (application_id)
