@@ -5,7 +5,7 @@ CREATE TABLE pets (
 	pet_name varchar(50) NOT NULL,
 	pet_type varchar(200) NOT NULL,
 	pet_age int,
-	is_avalible BOOLEAN,
+	is_available BOOLEAN,
 	image_link varchar(200)
 );
 
