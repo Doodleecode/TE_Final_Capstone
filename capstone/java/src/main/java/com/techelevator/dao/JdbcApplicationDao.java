@@ -76,7 +76,7 @@ public class JdbcApplicationDao implements ApplicationDao {
      */
     @Override
     public Long createApp(Application application) {
-        String sql = "INSERT INTO contact (contact_id, status_id, weekly_hours, is_day, preferred_animal, reason, time_registered) " +
+        String sql = "INSERT INTO application (contact_id, status_id, weekly_hours, is_day, preferred_animal, reason, time_registered) " +
                 " VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING application_id;";
         return jdbcTemplate.queryForObject(sql, Long.class, application.getContactId(), application.getStatusId(),
                 application.getWeeklyHours(), application.isDay(), application.getPreferredAnimal(),

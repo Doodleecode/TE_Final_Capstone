@@ -22,7 +22,7 @@ import com.techelevator.security.jwt.TokenProvider;
 @RestController
 @CrossOrigin
 public class AuthenticationController {
-    private static final String API_BASE_URL = "http://localhost:3000/";
+    private static final String API_BASE_URL = "http://localhost:9000/";
 
     private final TokenProvider tokenProvider;
     private final AuthenticationManagerBuilder authenticationManagerBuilder;
