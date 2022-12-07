@@ -10,4 +10,8 @@ public interface PetDao {
     Pet getPet(int id);
 
     List<Pet> getAllPets();
+
+    void submitPet(Pet pet);
+
+    void updateAvailability(int id);
 }
