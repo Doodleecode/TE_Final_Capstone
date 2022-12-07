@@ -10,4 +10,17 @@ CREATE TABLE pets (
 );
 
 insert into pets (pet_name, pet_type, pet_age, is_avalible)
-Values ('max','dog',10,true)
+Values ('max','dog',10,true);
+
+insert into pets (pet_name, pet_type, pet_age, is_avalible)
+Values ('frank','cat',3,true);
+
+insert into pets (pet_name, pet_type, pet_age, is_avalible)
+Values ('belle','dog',4,false);
+
+
+insert into pets (pet_name, pet_type, pet_age, is_avalible)
+Values ('benny','dog',14,true);
+
+insert into pets (pet_name, pet_type, pet_age, is_avalible)
+Values ('tiger','cat',1,true)
