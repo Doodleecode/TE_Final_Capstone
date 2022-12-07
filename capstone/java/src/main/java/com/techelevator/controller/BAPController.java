@@ -10,7 +10,6 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/api")
 public class BAPController {
 
         private PetDao petDao;
