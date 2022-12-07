@@ -3,8 +3,8 @@
     <h1>Home</h1>
     <p>You must be authenticated to see this</p>
     <animal-filter type="All"/>
-    <animal-filter type="Dog"/>
-    <animal-filter type="Cat"/>
+    <animal-filter type="dog"/>
+    <animal-filter type="cat"/>
     <animal-list/>
   </div>
   

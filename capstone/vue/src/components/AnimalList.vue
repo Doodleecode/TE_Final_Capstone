@@ -5,20 +5,24 @@
       <div class="loading" v-if="isLoading">
         <img src="../assets/ping_pong_loader.gif" />
       </div>
-      <animal-display class="animal" v-for="animal in animals"
+      <animal-display
+        class="animal"
+        v-for="animal in filteredAnimals"
         v-bind:key="animal.id"
-        v-else />
+        :animal="animal"
+        v-else
+      />
     </div>
   </div>
 </template>
 
 <script>
 import animalService from "../services/AnimalService";
-import AnimalDisplay from './AnimalDisplay';
+import AnimalDisplay from "./AnimalDisplay";
 export default {
-    components: {
-        AnimalDisplay
-    },
+  components: {
+    AnimalDisplay,
+  },
   data() {
     return {
       animals: [],

@@ -2,7 +2,7 @@
   <div>
     <h3>{{ animal.name }}</h3>
     <p>{{ animal.age }}</p>
-    <img v-bind:src="animal.url"/>
+    <img :src="animal.imageLink"/>
   </div>
 </template>
 
@@ -10,5 +10,11 @@
 export default {
   props: ["animal"]
 };
-
 </script>
+
+<style scoped>
+ img {
+   max-width: 200px;
+   height: auto;
+ }
+</style>

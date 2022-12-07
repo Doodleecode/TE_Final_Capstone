@@ -7,7 +7,7 @@ const http = axios.create({
 export default {
 
   addApplication(application) {
-    return http.post('/sumbmit', application);
+    return http.post('/submit', application);
   }
 
 }
