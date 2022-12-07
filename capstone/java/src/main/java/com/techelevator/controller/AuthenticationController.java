@@ -2,6 +2,7 @@ package com.techelevator.controller;
 
 import javax.validation.Valid;
 
+import com.techelevator.dao.ApplicationDao;
 import com.techelevator.model.*;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -21,10 +22,12 @@ import com.techelevator.security.jwt.TokenProvider;
 @RestController
 @CrossOrigin
 public class AuthenticationController {
+    private static final String API_BASE_URL = "http://localhost:3000/";
 
     private final TokenProvider tokenProvider;
     private final AuthenticationManagerBuilder authenticationManagerBuilder;
     private UserDao userDao;
+    private ApplicationDao applicationDao;
 
     public AuthenticationController(TokenProvider tokenProvider, AuthenticationManagerBuilder authenticationManagerBuilder, UserDao userDao) {
         this.tokenProvider = tokenProvider;
@@ -62,8 +65,8 @@ public class AuthenticationController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(value = "/submit", method = RequestMethod.POST)
-    public boolean submitVolunteerApp(@Valid User volunteerApplication) {
-        return userDao.submitVolunteerApp(volunteerApplication);
+    public Long createApp(@Valid @RequestBody Application application ) {
+        return applicationDao.createApp(application);
     }
 }
 
