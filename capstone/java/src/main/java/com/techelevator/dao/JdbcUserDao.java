@@ -85,10 +85,6 @@ public class JdbcUserDao implements UserDao {
         return jdbcTemplate.update(insertUserSql, username, password_hash, ssRole) == 1;
     }
 
-    public boolean submitVolunteerApp(User volunteerApplication) {
-        String insertAppSql = "INSERT INTO application (contact_id, status_id, weekly_hours, is_day, preferred_animal, reason, time_registered) values (?, ?, ?, ?, ?, ?, ?)";
-        return jdbcTemplate.update(insertAppSql) == 1;
-    }
 
     private User mapRowToUser(SqlRowSet rs) {
         User user = new User();

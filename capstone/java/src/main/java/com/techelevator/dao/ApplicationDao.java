@@ -1,6 +1,8 @@
 package com.techelevator.dao;
 
 import com.techelevator.model.Application;
+import com.techelevator.model.User;
+
 import java.util.List;
 
 public interface ApplicationDao {
@@ -13,5 +15,5 @@ public interface ApplicationDao {
 
     void updateStatus(int applicationId, String newStatusId);
 
-    Long create(Application application);
+    Long createApp(Application application);
 }

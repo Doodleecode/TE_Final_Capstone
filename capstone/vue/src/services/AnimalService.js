@@ -1,17 +1,17 @@
 import axios from 'axios';
 
 const http = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: "http://localhost:9000",
 });
 
 export default {
 
   getAnimals() {
-    return http.get('/animals');
+    return http.get('/pets');
   },
 
   getAnimal(petID) {
-    return http.get(`/animals/${petID}`)
+    return http.get(`/pets/${petID}`)
   }
 
 }

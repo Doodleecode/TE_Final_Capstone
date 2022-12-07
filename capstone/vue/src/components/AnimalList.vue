@@ -8,6 +8,7 @@
       <animal-display class="animal" v-for="animal in animals"
         v-bind:key="animal.id"
         v-else />
+    </div>
   </div>
 </template>
 
