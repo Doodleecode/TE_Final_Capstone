@@ -3,16 +3,13 @@ package com.techelevator.controller;
 import com.techelevator.dao.PetDao;
 import com.techelevator.model.Pet;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
-import java.security.Principal;
 import java.util.List;
 
 @RestController
-@PreAuthorize("isAuthenticated()")
 @RequestMapping(path = "/api")
 public class BAPController {
 
