@@ -1,12 +1,16 @@
 package com.techelevator.dao;
 
 import com.techelevator.model.Application;
+import com.techelevator.model.ApplicationDTO;
+import com.techelevator.model.Contact;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class JdbcApplicationDao implements ApplicationDao {
 
     private JdbcTemplate jdbcTemplate;
@@ -72,15 +76,21 @@ public class JdbcApplicationDao implements ApplicationDao {
     /**
      * Inserts contact info to contact table in database.
      *
-     * @param application
+     * @param applicationDTO
      */
     @Override
-    public Long createApp(Application application) {
-        String sql = "INSERT INTO contact (contact_id, status_id, weekly_hours, is_day, preferred_animal, reason, time_registered) " +
-                " VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING application_id;";
-        return jdbcTemplate.queryForObject(sql, Long.class, application.getContactId(), application.getStatusId(),
-                application.getWeeklyHours(), application.isDay(), application.getPreferredAnimal(),
-                application.getReason(), application.getTimeRegistered());
+    public void createApp(ApplicationDTO applicationDTO) {
+        String sql1 = "INSERT INTO contact (contact_name, phone, email, city, state, age, social_link) " +
+                " VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING contact_id;";
+        Contact contact = applicationDTO.getContact();
+        int contactId = jdbcTemplate.queryForObject(sql1, int.class, contact.getContactName(), contact.getPhone(),
+                contact.getEmail(), contact.getCity(), contact.getState(), contact.getAge(), contact.getSocialLink());
+        String sql2 = "INSERT INTO application (contact_id, status_id, weekly_hours, is_day, preferred_animal, reason) " +
+                " VALUES (?, ?, ?, ?, ?, ?) RETURNING application_id";
+        Application application = applicationDTO.getApplication();
+        int applicationId = jdbcTemplate.queryForObject(sql2, int.class, contactId, 'P', application.getWeeklyHours(),
+                application.isDay(), application.getPreferredAnimal(), application.getReason());
+        //some logic for user creation???
     }
 
     /**

@@ -3,10 +3,12 @@ package com.techelevator.dao;
 import com.techelevator.model.Contact;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class JdbcContactDao implements ContactDao {
 
     private JdbcTemplate jdbcTemplate;
@@ -54,7 +56,7 @@ public class JdbcContactDao implements ContactDao {
     public Long create(Contact contact) {
         String sql = "INSERT INTO contact (contact_name, phone, email, city, state, age, social_link) " +
                 " VALUES (?, ?, ?, ?, ?, ?) RETURNING contact_id;";
-        return jdbcTemplate.queryForObject(sql, Long.class, contact.getName(), contact.getPhone(),
+        return jdbcTemplate.queryForObject(sql, Long.class, contact.getContactName(), contact.getPhone(),
                 contact.getEmail(), contact.getCity(), contact.getState(), contact.getAge(), contact.getSocialLink());
     }
 

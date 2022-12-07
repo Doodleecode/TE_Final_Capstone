@@ -2,7 +2,7 @@ package com.techelevator.model;
 
 public class Contact {
     private int contactId;
-    private String name;
+    private String contactName;
     private String phone;
     private String email;
     private String city;
@@ -17,7 +17,7 @@ public class Contact {
     public Contact(int contactId, String name, String phone,
                    String email, String city, String state, int age, String socialLink) {
         this.contactId = contactId;
-        this.name = name;
+        this.contactName = name;
         this.phone = phone;
         this.email = email;
         this.city = city;
@@ -34,12 +34,12 @@ public class Contact {
         this.contactId = contactId;
     }
 
-    public String getName() {
-        return name;
+    public String getContactName() {
+        return contactName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setContactName(String contactName) {
+        this.contactName = contactName;
     }
 
     public String getPhone() {

@@ -29,10 +29,11 @@ public class AuthenticationController {
     private UserDao userDao;
     private ApplicationDao applicationDao;
 
-    public AuthenticationController(TokenProvider tokenProvider, AuthenticationManagerBuilder authenticationManagerBuilder, UserDao userDao) {
+    public AuthenticationController(TokenProvider tokenProvider, AuthenticationManagerBuilder authenticationManagerBuilder, UserDao userDao, ApplicationDao applicationDao) {
         this.tokenProvider = tokenProvider;
         this.authenticationManagerBuilder = authenticationManagerBuilder;
         this.userDao = userDao;
+        this.applicationDao = applicationDao;
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -65,8 +66,10 @@ public class AuthenticationController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(value = "/submit", method = RequestMethod.POST)
-    public Long createApp(@Valid @RequestBody Application application ) {
-        return applicationDao.createApp(application);
+    public void createApp(@Valid @RequestBody ApplicationDTO applicationDTO) {
+        System.out.println(1);
+        applicationDao.createApp(applicationDTO);
+        System.out.println(2);
     }
 }
 
