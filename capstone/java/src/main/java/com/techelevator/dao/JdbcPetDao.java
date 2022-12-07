@@ -76,6 +76,7 @@ public class JdbcPetDao implements PetDao {
         pet.setType(rs.getString("pet_type"));
         pet.setAge(rs.getInt("pet_age"));
         pet.setAvailable(rs.getBoolean("is_available"));
+        pet.setImageLink(rs.getString("image_link"));
         return pet;
     }
 }
