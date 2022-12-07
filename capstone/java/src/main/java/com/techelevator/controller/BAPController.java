@@ -44,8 +44,14 @@ public class BAPController {
 
     @PutMapping("/pets/{id}")
     public void changePetAvailability(@PathVariable int id){
-
+        petDao.updateAvailability(id);
     }
+
+    @DeleteMapping("/pets/{id}")
+    public void deletePet(@PathVariable int id){
+            petDao.deletePet(id);
+    }
+
 
 
     }

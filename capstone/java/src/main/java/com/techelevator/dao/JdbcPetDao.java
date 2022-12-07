@@ -56,14 +56,20 @@ public class JdbcPetDao implements PetDao {
         Pet pet = getPet(id);
         String sql;
         if (pet.isAvailable()) {
-            sql = "UPDATE pet SET is_available = false WHERE pet_id = ?;";
+            sql = "UPDATE pets SET is_available = false WHERE pet_id = ?;";
         } else {
-            sql = "UPDATE pet SET is_available = true WHERE pet_id = ?;";
+            sql = "UPDATE pets SET is_available = true WHERE pet_id = ?;";
         }
         jdbcTemplate.update(sql, pet.getId());
     }
 
-        private Pet mapRowToPet(SqlRowSet rs) {
+    @Override
+    public void deletePet(int id) {
+        String sql = "DELETE FROM pets WHERE pet_id = ?;";
+        jdbcTemplate.update(sql,id);
+    }
+
+    private Pet mapRowToPet(SqlRowSet rs) {
         Pet pet = new Pet();
         pet.setId(rs.getInt("pet_id"));
         pet.setName(rs.getString("pet_name"));
