@@ -185,7 +185,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 form {
   width: 700px;
   margin: 20px;
