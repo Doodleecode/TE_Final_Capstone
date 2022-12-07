@@ -1,7 +1,7 @@
 <template>
   <div id="register" class="text-center">
     <form class="form-register" @submit.prevent="register">
-      <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
+      <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
       </div>
@@ -15,6 +15,8 @@
         required
         autofocus
       />
+      <br>
+      <br>
       <label for="password" class="sr-only">Password</label>
       <input
         type="password"
@@ -32,10 +34,12 @@
         v-model="user.confirmPassword"
         required
       />
-      <router-link :to="{ name: 'login' }">Have an account?</router-link>
       <button class="btn btn-lg btn-primary btn-block" type="submit">
         Create Account
       </button>
+      <div id="have">
+      <router-link :to="{ name: 'login' }">Have an account?</router-link>
+      </div>
     </form>
   </div>
 </template>
@@ -90,4 +94,76 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+#register {
+  display: block;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+form {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  border: 3px solid #f1f1f1;
+  position: relative;
+  height: 560px;
+  width: 400px;
+  margin: auto;
+  padding: 60px 60px;
+  background-color: rgb(122, 118, 118);
+}
+
+h1 {
+  text-transform: uppercase;
+  font-weight: 150;
+  padding-bottom: 40px;
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: cornflowerblue;
+}
+
+.sr-only {
+  color: lightgray;
+}
+
+#username, #password, #confirmPassword {
+  width: 89%;
+  padding: 10px 20px;
+  display: block;
+  height: 15px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0);
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+button {
+  background-color: cornflowerblue;
+  color: white;
+  width: 100%;
+  padding: 10px 20px;
+  display: block;
+  height: 39px;
+  border-radius: 10px;
+  margin-top: 30px;
+  border: none;
+  text-transform: uppercase;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+a {
+  display: block;
+  text-align: center;
+  position: relative;
+  margin-top: 22%;
+  color: white;
+}
+</style>
