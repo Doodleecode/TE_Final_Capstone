@@ -147,7 +147,7 @@ export default {
   },
   methods: {
     addApplication() {
-      const applicationDTO = new Array(this.contact, this.application);
+      const applicationDTO = { contact: this.contact, application: this.application }
       applicationService
         .addApplication(applicationDTO)
         .then((response) => {
