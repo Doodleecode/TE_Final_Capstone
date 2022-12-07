@@ -2,11 +2,8 @@ package com.techelevator.dao;
 
 
 import com.techelevator.model.Pet;
-import com.techelevator.model.User;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -48,6 +45,29 @@ public class JdbcPetDao implements PetDao {
         return allPets;
     }
 
+    @Override
+    public void submitPet(Pet pet) {
+        String sql = "INSERT INTO pets (pet_name, pet_type, pet_age, is_available) VALUES(?,?,?,?)";
+        jdbcTemplate.update(sql,pet.getName(),pet.getType(),pet.getAge(),pet.isAvailable());
+    }
+
+    @Override
+    public void updateAvailability(int id) {
+        Pet pet = getPet(id);
+        String sql;
+        if (pet.isAvailable()) {
+            sql = "UPDATE pets SET is_available = false WHERE pet_id = ?;";
+        } else {
+            sql = "UPDATE pets SET is_available = true WHERE pet_id = ?;";
+        }
+        jdbcTemplate.update(sql, pet.getId());
+    }
+
+    @Override
+    public void deletePet(int id) {
+        String sql = "DELETE FROM pets WHERE pet_id = ?;";
+        jdbcTemplate.update(sql,id);
+    }
 
     private Pet mapRowToPet(SqlRowSet rs) {
         Pet pet = new Pet();

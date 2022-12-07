@@ -2,19 +2,19 @@
   <div class="home">
     <h1>Home</h1>
     <p>You must be authenticated to see this</p>
-    <animal-filter :type="All"/>
-    <animal-filter :type="Dog"/>
-    <animal-filter :type="Cat"/>
-    <animal-display/>
+    <animal-filter type="All"/>
+    <animal-filter type="Dog"/>
+    <animal-filter type="Cat"/>
+    <animal-list/>
   </div>
   
 </template>
 
 <script>
-import AnimalDisplay from '../components/AnimalDisplay.vue';
 import AnimalFilter from '../components/AnimalFilter.vue';
+import AnimalList from '../components/AnimalList.vue';
 export default {
-  components: { AnimalFilter, AnimalDisplay },
+  components: { AnimalFilter, AnimalList},
   name: "home"
 };
 </script>

@@ -1,13 +1,13 @@
 import axios from 'axios';
 
 const http = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: "http://localhost:9000",
 });
 
 export default {
 
   addApplication(application) {
-    return http.post('/application', application);
+    return http.post('/sumbmit', application);
   }
 
 }

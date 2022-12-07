@@ -3,17 +3,13 @@ package com.techelevator.controller;
 import com.techelevator.dao.PetDao;
 import com.techelevator.model.Pet;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@PreAuthorize("isAuthenticated()")
 @RequestMapping(path = "/api")
 public class BAPController {
 
@@ -36,6 +32,23 @@ public class BAPController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Pet was not found");
         }
     }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping("/pets")
+    public void addNewPet(@Valid @RequestBody Pet pet) {
+        petDao.submitPet(pet);
+    }
+
+    @PutMapping("/pets/{id}")
+    public void changePetAvailability(@PathVariable int id){
+        petDao.updateAvailability(id);
+    }
+
+    @DeleteMapping("/pets/{id}")
+    public void deletePet(@PathVariable int id){
+            petDao.deletePet(id);
+    }
+
 
 
     }

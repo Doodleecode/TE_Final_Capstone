@@ -13,12 +13,12 @@ public class Pet {
     }
 
 
-    public Pet(int id, String name, String type, int age, boolean isAvalible, String imageLink) {
+    public Pet(int id, String name, String type, int age, boolean isAvailable, String imageLink) {
         this.id = id;
         this.name = name;
         this.type = type;
         this.age = age;
-        this.isAvailable = isAvalible;
+        this.isAvailable = isAvailable;
         this.imageLink = imageLink;
     }
 
