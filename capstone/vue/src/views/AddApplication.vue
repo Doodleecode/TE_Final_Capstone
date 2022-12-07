@@ -8,23 +8,23 @@
       <h2>Contact Info</h2>
       <div class="form-element">
         <label for="name">Name:</label>
-        <input id="name" type="text" v-model="newContact.name" />
+        <input id="name" type="text" v-model="contact.contactName" />
       </div>
       <div class="form-element">
         <label for="phone">Phone:</label>
-        <input id="phone" type="tel" v-model="newContact.phone" />
+        <input id="phone" type="tel" v-model="contact.phone" />
       </div>
       <div class="form-element">
         <label for="email">Email:</label>
-        <input id="email" type="email" v-model="newContact.email" />
+        <input id="email" type="email" v-model="contact.email" />
       </div>
       <div class="form-element">
         <label for="city">City:</label>
-        <input id="city" type="text" v-model="newContact.city" />
+        <input id="city" type="text" v-model="contact.city" />
       </div>
       <div class="form-element">
         <label for="state">State:</label>
-        <select id="state" v-model.number="newContact.state">
+        <select id="state" v-model.number="contact.state">
           <!-- https://www.freeformatter.com/usa-state-list-html-select.html -->
           <option value="AL">Alabama</option>
           <option value="AK">Alaska</option>
@@ -80,8 +80,12 @@
         </select>
       </div>
       <div class="form-element">
+        <label for="age">Age:</label>
+        <input id="age" type="number" v-model="contact.age" />
+      </div>
+      <div class="form-element">
         <label for="link">Social Link:</label>
-        <input id="link" type="url" v-model="newContact.link" />
+        <input id="link" type="url" v-model="contact.socialLink" />
       </div>
       <h2>Volunteering Info</h2>
       <div class="form-element">
@@ -89,28 +93,30 @@
         <input
           id="hours"
           type="number"
-          v-model="newApplicationInfo.weeklyHours"
+          v-model="application.weeklyHours"
         />
       </div>
       <div class="form-element">
         <label for="time">Time of Day:</label>
-        <select id="time" v-model.number="newApplicationInfo.timeOfDay">
-          <option value="DAY">Day(8am-5pm)</option>
-          <option value="NIGHT">Night(5pm-9pm)</option>
+        <select id="time" v-model.number="application.isDay">
+          <option :value="true">Day(8am-5pm)</option>
+          <option :value="false">Night(5pm-9pm)</option>
         </select>
       </div>
       <div class="form-element">
         <label for="animal">Preferred Animal:</label>
-        <select id="animal" v-model.number="newApplicationInfo.animal">
-          <option value="DOG">Dogs</option>
-          <option value="CAT">Cats</option>
+        <select id="animal" v-model.number="application.preferredAnimal">
+          <option value="Dog">Dogs</option>
+          <option value="Cat">Cats</option>
         </select>
       </div>
       <div class="form-element">
-        <label for="why">Why would you like to volunteer?</label>
-        <textarea id="why" v-model="newApplicationInfo.why"></textarea>
+        <label for="reason">Why would you like to volunteer?</label>
+        <textarea id="reason" v-model="application.reason"></textarea>
       </div>
+      <div class="form-element">
       <button class="btn btn-submit">Submit</button>
+      </div>
     </form>
   </div>
 </template>
@@ -122,27 +128,28 @@ export default {
   data() {
     return {
       errorMsg: "",
-      newContact: {
-        name: "",
+      contact: {
+        contactName: "",
         phone: "",
         email: "",
         city: "",
         state: "",
-        link: "",
+        age: 18,
+        socialLink: "",
       },
-      newApplicationInfo: {
+      application: {
         weeklyHours: 0,
-        timeOfDay: "",
-        animal: "",
-        why: "",
+        isDay: true,
+        preferredAnimal: "",
+        reason: "",
       },
     };
   },
   methods: {
     addApplication() {
-      const application = new Array(this.newContact, this.newApplicationInfo);
+      const applicationDTO = new Array(this.contact, this.application);
       applicationService
-        .addApplication(application)
+        .addApplication(applicationDTO)
         .then((response) => {
           if (response.status === 201) {
             this.goBack();
@@ -187,7 +194,7 @@ form {
 .form-element {
   width: 700px;
   padding-bottom: 10px;
-  display: block;
+  display: flex;
 }
 .form-element label {
   width: 100px;
@@ -195,9 +202,10 @@ form {
 }
 .form-element input,
 select,
-textarea {
+textarea, .btn {
   width: 400px;
   font-size: 1.1rem;
+  flex: 1;
 }
 
 textarea {
