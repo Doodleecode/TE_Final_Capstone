@@ -27,7 +27,11 @@ public class BAPController {
 
     @GetMapping("/pets/{id}")
     public Pet findTransaction(@PathVariable int id) {
+        try {
             return petDao.getPet(id);
+        } catch (RuntimeException e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Pet was not found");
+        }
     }
 
     @ResponseStatus(HttpStatus.CREATED)

@@ -17,4 +17,6 @@ public interface ApplicationDao {
     void updateStatus(int applicationId, String newStatusId);
 
     void createApp(ApplicationDTO applicationDTO);
+
+    List<ApplicationDTO> listApplicationDTO(String statusId);
 }
