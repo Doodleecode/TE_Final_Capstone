@@ -28,7 +28,10 @@ public class JdbcPetDao implements PetDao {
 
         SqlRowSet rs = jdbcTemplate.queryForRowSet(sql, id);
 
-        return mapRowToPet(rs);
+        if (rs.next()) {
+            return mapRowToPet(rs);
+        }
+        return null;
     }
 
     @Override
@@ -47,8 +50,8 @@ public class JdbcPetDao implements PetDao {
 
     @Override
     public void submitPet(Pet pet) {
-        String sql = "INSERT INTO pets (pet_name, pet_type, pet_age, is_available) VALUES(?,?,?,?)";
-        jdbcTemplate.update(sql,pet.getName(),pet.getType(),pet.getAge(),pet.isAvailable());
+        String sql = "INSERT INTO pets (pet_name, pet_type, pet_age, is_available,image_link) VALUES(?,?,?,?,?)";
+        jdbcTemplate.update(sql,pet.getName(),pet.getType(),pet.getAge(),pet.isAvailable(),pet.getImageLink());
     }
 
     @Override
