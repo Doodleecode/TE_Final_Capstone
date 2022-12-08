@@ -18,15 +18,15 @@ CREATE SEQUENCE seq_contact_id
 
 CREATE TABLE contact (
 	contact_id int NOT NULL DEFAULT nextval('seq_contact_id'),
-	contact_name varchar(50) NOT NULL,
+	contact_name varchar(50) NOT NULL CHECK (contact_name <> ''),
 	phone varchar(20),
 	email varchar(128),
 	city varchar(26),
 	state varchar(2),
-	age int NOT NULL,
+	age int NOT NULL CHECK (age <> 0),
 	social_link varchar(256),
 	CONSTRAINT PK_contact PRIMARY KEY (contact_id),
-	CHECK ((phone IS NOT NULL) OR (email IS NOT NULL))
+	CHECK ((phone IS NOT NULL AND phone <> '') OR (email IS NOT NULL AND email <> ''))
 );
 
 -- user_id starts at 1001 to keep the length in consistent.
@@ -37,7 +37,7 @@ CREATE SEQUENCE seq_user_id
 	
 CREATE TABLE shelter_user (
 	user_id int NOT NULL DEFAULT nextval('seq_user_id'),
-	contact_id int NOT NULL REFERENCES contact (contact_id),
+	contact_id int REFERENCES contact (contact_id),
 	username varchar(50) NOT NULL,
 	password_hash varchar(200) NOT NULL,
 	user_role varchar(128) NOT NULL,	
@@ -55,10 +55,10 @@ CREATE TABLE application (
 	application_id int NOT NULL DEFAULT nextval('seq_application_id'),
 	contact_id int NOT NULL REFERENCES contact (contact_id),
 	status_id varchar(1) NOT NULL REFERENCES status (status_id),
-	weekly_hours int NOT NULL,
+	weekly_hours int NOT NULL CHECK (weekly_hours <> 0),
 	is_day boolean NOT NULL,
-	preferred_animal varchar(32) NOT NULL,
-	reason varchar(1000),
+	preferred_animal varchar(32) NOT NULL CHECK (preferred_animal <> ''),
+	reason varchar(1000) ,
 	time_registered timestamp DEFAULT NOW(),		
 	CONSTRAINT PK_application PRIMARY KEY (application_id)
 );
