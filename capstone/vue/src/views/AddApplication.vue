@@ -4,27 +4,35 @@
         {{ errorMsg }}
       </div>
     <form v-on:submit.prevent="addApplication">
-      <h1>Application</h1>
+      <h1 id="app-title">Application</h1>
       <h2>Contact Info</h2>
       <div class="form-element">
         <label for="name">Name:</label>
         <input id="name" type="text" v-model="contact.contactName" />
       </div>
+      <br>
+      <br>
       <div class="form-element">
         <label for="phone">Phone:</label>
         <input id="phone" type="tel" v-model="contact.phone" />
       </div>
+      <br>
+      <br>
       <div class="form-element">
         <label for="email">Email:</label>
         <input id="email" type="email" v-model="contact.email" />
       </div>
+      <br>
+      <br>
       <div class="form-element">
         <label for="city">City:</label>
         <input id="city" type="text" v-model="contact.city" />
       </div>
+      <br>
+      <br>
       <div class="form-element">
         <label for="state">State:</label>
-        <select id="state" v-model.number="contact.state">
+        <select name="state" id="state" v-model="contact.state">
           <!-- https://www.freeformatter.com/usa-state-list-html-select.html -->
           <option value="AL">Alabama</option>
           <option value="AK">Alaska</option>
@@ -79,14 +87,20 @@
           <option value="WY">Wyoming</option>
         </select>
       </div>
+      <br>
+      <br>
       <div class="form-element">
         <label for="age">Age:</label>
         <input id="age" type="number" v-model="contact.age" />
       </div>
+      <br>
+      <br>
       <div class="form-element">
         <label for="link">Social Link:</label>
         <input id="link" type="url" v-model="contact.socialLink" />
       </div>
+      <br>
+      <br>
       <h2>Volunteering Info</h2>
       <div class="form-element">
         <label for="hours">Weekly Hours:</label>
@@ -96,6 +110,8 @@
           v-model="application.weeklyHours"
         />
       </div>
+      <br>
+      <br>
       <div class="form-element">
         <label for="time">Time of Day:</label>
         <select id="time" v-model.number="application.isDay">
@@ -103,6 +119,8 @@
           <option :value="false">Night(5pm-9pm)</option>
         </select>
       </div>
+      <br>
+      <br>
       <div class="form-element">
         <label for="animal">Preferred Animal:</label>
         <select id="animal" v-model.number="application.preferredAnimal">
@@ -110,6 +128,8 @@
           <option value="Cat">Cats</option>
         </select>
       </div>
+      <br>
+      <br>
       <div class="form-element">
         <label for="reason">Why would you like to volunteer?</label>
         <textarea id="reason" v-model="application.reason"></textarea>
@@ -209,7 +229,7 @@ form {
   background-color: rgb(122, 118, 118);
 }
 
-h1 {
+#app-title {
   text-transform: uppercase;
   font-weight: 150;
   padding-bottom: 40px;
@@ -227,11 +247,7 @@ h2 {
   color: lightgray;
 }
 
-option {
-  color: black;
-}
-
-.form-element input, select, textarea {
+.form-element input, textarea {
   width: 89%;
   padding: 10px 20px;
   display: block;
@@ -244,8 +260,19 @@ option {
   color: white;
 } 
 
-.form-element select {
+select {
   width: 96.5%;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  display: block;
+  height: 45px;
+  border-radius: 10px;
+  color: white;
+  margin-top: 15px;
+}
+
+option {
+  color: black;
 }
 
 .form-element textarea {
@@ -268,6 +295,23 @@ button {
 button:hover {
   opacity: 0.8;
 }
+
+
+
+/* .form-element input, select, textarea {
+  width: 89%;
+  padding: 10px 20px;
+  display: block;
+  height: 15px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0);
+  overflow: hidden;
+  margin-top: 15px;
+  color: white;
+}  */
+
+
 
 /* .form-element {
   width: 700px;

@@ -13,6 +13,11 @@ export default {
 </script>
 
 <style scoped>
+.animal-display {
+  max-width: 10%;
+  border: 1px solid rgb(0, 64, 184);  
+}
+
 .animal-display:hover {
   cursor: pointer;
   transform: scale(1.2);

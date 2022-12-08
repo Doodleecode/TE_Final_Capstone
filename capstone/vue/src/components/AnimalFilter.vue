@@ -28,15 +28,15 @@ export default {
 }
 .well:hover{
   letter-spacing: 5px;
-  border-top: 5px solid cornflowerblue;
-  border-bottom: 5px solid cornflowerblue;  
+  border-top: 5px solid rgb(0, 64, 184);
+  border-bottom: 5px solid rgb(0, 64, 184);  
   transition: all 0.3s ease-in-out;
 }
 
 .filtered{
   letter-spacing: 5px;
-  border-top: 5px solid cornflowerblue;
-  border-bottom: 5px solid cornflowerblue;  
+  border-top: 5px solid rgb(0, 64, 184);
+  border-bottom: 5px solid rgb(0, 64, 184);  
   transition: all 0.3s ease-in-out;
 }
 
