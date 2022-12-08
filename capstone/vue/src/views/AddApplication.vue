@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <h1>Application</h1>
+  <div id="application">
       <div class="status-message error" v-show="errorMsg !== ''">
         {{ errorMsg }}
       </div>
     <form v-on:submit.prevent="addApplication">
+      <h1>Application</h1>
       <h2>Contact Info</h2>
       <div class="form-element">
         <label for="name">Name:</label>
@@ -186,12 +186,90 @@ export default {
 </script>
 
 <style scoped>
-form {
-  width: 700px;
-  margin: 20px;
-  
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
+
+#application {
+  display: block;
+  text-align: center;
+  font-family: 'Oxygen', sans-serif;
 }
-.form-element {
+
+form {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  border: 3px solid #f1f1f1;
+  position: relative;
+  height: 100%;
+  width: 600px;
+  margin: auto;
+  padding: 60px 60px;
+  background-color: rgb(122, 118, 118);
+}
+
+h1 {
+  text-transform: uppercase;
+  font-weight: 150;
+  padding-bottom: 40px;
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: cornflowerblue;
+  text-align: center;
+}
+
+h2 {
+  color: lightgray;
+}
+
+.form-element label {
+  color: lightgray;
+}
+
+option {
+  color: black;
+}
+
+.form-element input, select, textarea {
+  width: 89%;
+  padding: 10px 20px;
+  display: block;
+  height: 15px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0);
+  overflow: hidden;
+  margin-top: 15px;
+  color: white;
+} 
+
+.form-element select {
+  width: 96.5%;
+}
+
+.form-element textarea {
+  height: 120px;
+}
+
+button {
+  background-color: cornflowerblue;
+  color: white;
+  width: 100%;
+  padding: 10px 20px;
+  display: block;
+  height: 39px;
+  border-radius: 10px;
+  margin-top: 30px;
+  border: none;
+  text-transform: uppercase;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* .form-element {
   width: 700px;
   padding-bottom: 10px;
   display: flex;
@@ -219,5 +297,5 @@ textarea {
 }
 .actions button {
   margin-left: 10px;
-}
+} */
 </style>
