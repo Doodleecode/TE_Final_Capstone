@@ -3,7 +3,7 @@
     <h1>Adoptable Animals</h1>
     <div class="animals">
       <div class="loading" v-if="isLoading">
-        <img src="../assets/ping_pong_loader.gif" />
+        <img src="../assets/cat_loading.gif" />
       </div>
       <animal-display
         class="animal"
@@ -47,9 +47,14 @@ export default {
 </script>
 
 <style>
+h1 {
+  text-align: center;
+}
 .animals {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   align-items: center;
 }
 .animal {
@@ -57,8 +62,9 @@ export default {
   border-radius: 10px;
   padding: 40px;
   flex: 1;
-  margin: 0 20px;
+  margin: 20px;
   text-align: center;
+  max-width: 250px;
 }
 .loading {
   flex: 3;
@@ -67,5 +73,10 @@ export default {
 .animal a:visited {
   color: rgb(243, 243, 243);
   text-decoration: none;
+}
+
+.loading {
+  text-align: center;
+  
 }
 </style>
