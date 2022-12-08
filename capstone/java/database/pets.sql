@@ -15,3 +15,10 @@ Values ('max','dog',10,true,'https://images.unsplash.com/photo-1587402092301-725
 ('belle','dog',4,false,'https://images.unsplash.com/photo-1587402092301-725e37c70fd8'),
 ('benny','dog',14,true,'https://images.unsplash.com/photo-1587402092301-725e37c70fd8'),
 ('tiger','cat',1,true,'https://images.unsplash.com/photo-1615789591457-74a63395c990');
+
+INSERT INTO pets (pet_name, pet_type, pet_age, is_available, image_link)
+Values ('a','dog',10,true,'https://images.unsplash.com/photo-1587402092301-725e37c70fd8'),
+('Doodle','cat',2,true,'https://images.unsplash.com/photo-1670471198259-137eacb1a430?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2127&q=80'),
+('c','dog',4,false,'https://images.unsplash.com/photo-1587402092301-725e37c70fd8'),
+('d','dog',14,true,'https://images.unsplash.com/photo-1587402092301-725e37c70fd8'),
+('e','cat',1,true,'https://images.unsplash.com/photo-1615789591457-74a63395c990');

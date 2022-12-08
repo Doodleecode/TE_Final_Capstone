@@ -20,7 +20,8 @@ public class BAPController {
         }
 
         @GetMapping("/pets")
-        public List<Pet> getAllPets() {
+        public List<Pet> getAllPets() throws InterruptedException{
+            Thread.sleep(1000);
             return petDao.getAllPets();
         }
 
