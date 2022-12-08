@@ -1,7 +1,7 @@
 <template>
   <div id="login" class="text-center">
     <form class="form-signin" @submit.prevent="login">
-      <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
+      <h1 id="page-title" class="h3 mb-3 font-weight-normal">Sign In</h1>
       <div
         class="alert alert-danger"
         role="alert"
@@ -102,7 +102,7 @@ form {
   background-color: rgb(122, 118, 118);
 }
 
-h1 {
+#page-title {
   text-transform: uppercase;
   font-weight: 150;
   padding-bottom: 40px;

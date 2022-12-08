@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Adoptable Animals</h1>
+    <h1 id="title">Adoptable Animals</h1>
     <div class="animals">
       <div class="loading" v-if="isLoading">
         <img src="../assets/cat_loading.gif" />
@@ -47,7 +47,7 @@ export default {
 </script>
 
 <style>
-h1 {
+#title {
   text-align: center;
 }
 .animals {
