@@ -60,11 +60,11 @@ h1 {
 .animal {
   background-color: #f7fafc;
   border-radius: 10px;
-  padding: 40px;
-  flex: 1;
+  padding: 40px;  
   margin: 20px;
   text-align: center;
-  max-width: 250px;
+  width: 20%;
+  max-width: 212.5px;
 }
 .loading {
   flex: 3;

@@ -17,10 +17,10 @@ export default {
   cursor: pointer;
   transform: scale(1.2);
   transition: all 0.2s ease-in-out;
-  box-shadow: 0 0 6px black;
+  box-shadow: 0 0 20px black;
 }
  img {
-   max-width: 300px;
-   max-height: 300px;   
+   max-width: 200px;
+   max-height: 200px;   
  }
 </style>
