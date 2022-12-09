@@ -27,15 +27,19 @@
           <input type="text" v-model="pet.breed" />
         </div>
         <div>
-          <label for="size">Size:</label>
+          <label for="size">Weight:</label>
           <input type="text" v-model="pet.size" />
         </div>
         <div>
-          <label for="isGoodWithAnimals">Good with Animal?</label>
+          <label for="isGoodWithAnimals">Good with Dogs?</label>
           <input type="text" v-model="pet.goodWithAnimals" />
         </div>
         <div>
-          <label for="isGoodWithKids">Good with Kid?</label>
+          <label for="isGoodWithAnimals">Good with Cats?</label>
+          <input type="text" v-model="pet.goodWithAnimals" />
+        </div>
+        <div>
+          <label for="isGoodWithKids">Good with Kids?</label>
           <input type="text" v-model="pet.goodWithKids" />
         </div>
         <div>

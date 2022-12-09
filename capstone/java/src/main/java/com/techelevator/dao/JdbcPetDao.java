@@ -21,7 +21,7 @@ public class JdbcPetDao implements PetDao {
 
     @Override
     public Pet getPet(int id) {
-        if (id == 0) throw new IllegalArgumentException("Id cannot be null");
+        if (id == 0) throw new IllegalArgumentException("ID cannot be null");
 
 
         String sql = "SELECT * FROM pets WHERE pet_id = ?";
@@ -50,9 +50,9 @@ public class JdbcPetDao implements PetDao {
 
     @Override
     public void submitPet(Pet pet) {
-        String sql = "INSERT INTO pets (pet_name, pet_type, pet_age, pet_sex, pet_breed, pet_size, is_good_with_kids, is_good_with_animals, is_available, image_link) VALUES(?,?,?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO pets (pet_name, pet_type, pet_age, pet_sex, pet_breed, pet_size, is_good_with_kids, is_good_with_dogs, is_good_with_cats, is_available, image_link) VALUES(?,?,?,?,?,?,?,?,?,?)";
         jdbcTemplate.update(sql, pet.getName(), pet.getType(), pet.getAge(), pet.getSex(), pet.getBreed(), pet.getSize(),
-                pet.isGoodWithKids(), pet.isGoodWithAnimals(), pet.isAvailable(), pet.getImageLink());
+                pet.isGoodWithKids(), pet.isGoodWithDogs(), pet.isGoodWithCats(), pet.isAvailable(), pet.getImageLink());
     }
 
     @Override
@@ -83,7 +83,8 @@ public class JdbcPetDao implements PetDao {
         pet.setBreed(rs.getString("pet_breed"));
         pet.setSize(rs.getString("pet_size"));
         pet.setGoodWithKids(rs.getBoolean("is_good_with_kids"));
-        pet.setGoodWithAnimals(rs.getBoolean("is_good_with_animals"));
+        pet.setGoodWithDogs(rs.getBoolean("is_good_with_dogs"));
+        pet.setGoodWithCats(rs.getBoolean("is_good_with_cats"));
         pet.setAvailable(rs.getBoolean("is_available"));
         pet.setImageLink(rs.getString("image_link"));
         return pet;
