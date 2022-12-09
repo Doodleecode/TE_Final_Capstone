@@ -36,6 +36,6 @@ body {
   
 }
 body {
-  background-color: gray;
+  background-color: white;
 }
 </style>

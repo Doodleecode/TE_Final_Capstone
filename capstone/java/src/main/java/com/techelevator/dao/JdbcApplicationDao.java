@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
+import javax.sql.RowSet;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -74,7 +75,7 @@ public class JdbcApplicationDao implements ApplicationDao {
     }
 
     /**
-     * Inserts contact info to contact table in database.
+     * Inserts application and contact into db
      *
      * @param applicationDTO
      */
@@ -94,6 +95,26 @@ public class JdbcApplicationDao implements ApplicationDao {
     }
 
     /**
+     * Inserts contact info to contact table in database.
+     *
+     * @param statusId
+     */
+    @Override
+    public List<ApplicationDTO> listApplicationDTO(String statusId) {
+        String sql = "SELECT c.contact_name contact_name, c.phone phone, c.email email, c.city city, c.state state, c.age age," +
+                " c.social_link social_link, a.application_id application_id, a.contact_id contact_id, a.status_id status_id," +
+                " a.weekly_hours weekly_hours, a.is_day is_day, a.preferred_animal preferred_animal, a.reason reason, a.time_registered time_registered" +
+                " FROM contact c JOIN application a ON c.contact_id=a.contact_id WHERE a.status_id = ? ORDER BY a.time_registered";
+        SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql, statusId);
+        List<ApplicationDTO> applicationDTOs = new ArrayList<>();
+        while (rowSet.next()) {
+            applicationDTOs.add(mapRowToApplicationDTO(rowSet));
+        }
+        return applicationDTOs;
+    }
+
+
+    /**
      * @param rowSet
      * @return List of application objects
      */
@@ -104,6 +125,34 @@ public class JdbcApplicationDao implements ApplicationDao {
             allContacts.add(application);
         }
         return allContacts;
+    }
+
+    /**
+     * Mapping each row of SQL result to applicationDTO object including application and contact
+     *
+     * @param rowSet
+     * @return application
+     */
+    private ApplicationDTO mapRowToApplicationDTO(SqlRowSet rowSet) {
+        Application application = new Application(
+                rowSet.getInt("application_id"),
+                rowSet.getInt("contact_id"),
+                rowSet.getString("status_id"),
+                rowSet.getInt("weekly_hours"),
+                rowSet.getBoolean("is_day"),
+                rowSet.getString("preferred_animal"),
+                rowSet.getString("reason"),
+                rowSet.getTimestamp("time_registered").toLocalDateTime());
+        Contact contact = new Contact(
+                rowSet.getInt("contact_id"),
+                rowSet.getString("contact_name"),
+                rowSet.getString("phone"),
+                rowSet.getString("email"),
+                rowSet.getString("city"),
+                rowSet.getString("state"),
+                rowSet.getInt("age"),
+                rowSet.getString("social_link"));
+        return new ApplicationDTO(application,contact);
     }
 
     /**

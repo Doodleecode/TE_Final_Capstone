@@ -19,6 +19,8 @@ import com.techelevator.dao.UserDao;
 import com.techelevator.security.jwt.JWTFilter;
 import com.techelevator.security.jwt.TokenProvider;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin
 public class AuthenticationController {
@@ -56,6 +58,7 @@ public class AuthenticationController {
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public void register(@Valid @RequestBody RegisterUserDto newUser) {
+        newUser.setRole("ROLE_USER");
         try {
             User user = userDao.findByUsername(newUser.getUsername());
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "User Already Exists.");
@@ -67,9 +70,12 @@ public class AuthenticationController {
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(value = "/submit", method = RequestMethod.POST)
     public void createApp(@Valid @RequestBody ApplicationDTO applicationDTO) {
-        System.out.println(1);
         applicationDao.createApp(applicationDTO);
-        System.out.println(2);
+    }
+
+    @GetMapping(value = "/applications/{id}")
+    public List<ApplicationDTO> getApplications(@PathVariable String id) {
+        return applicationDao.listApplicationDTO(id);
     }
 }
 
