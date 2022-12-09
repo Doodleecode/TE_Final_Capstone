@@ -77,7 +77,7 @@ const router = new Router({
       name: "pets",
       component: AddAnimal,
       meta: {
-        requiresAuth: false
+        requiresAuth: false //switch to true after CSS
       }
     }
 
