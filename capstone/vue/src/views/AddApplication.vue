@@ -1,141 +1,144 @@
 <template>
   <div id="application">
-      <div class="status-message error" v-show="errorMsg !== ''">
-        {{ errorMsg }}
-      </div>
     <form v-on:submit.prevent="addApplication">
-      <h1 id="app-title">Application</h1>
-      <h2>Contact Info</h2>
-      <div class="form-element">
-        <label for="name">Name:</label>
-        <input id="name" type="text" v-model="contact.contactName" />
-      </div>
-      <br>
-      <br>
-      <div class="form-element">
-        <label for="phone">Phone:</label>
-        <input id="phone" type="tel" v-model="contact.phone" />
-      </div>
-      <br>
-      <br>
-      <div class="form-element">
-        <label for="email">Email:</label>
-        <input id="email" type="email" v-model="contact.email" />
-      </div>
-      <br>
-      <br>
-      <div class="form-element">
-        <label for="city">City:</label>
-        <input id="city" type="text" v-model="contact.city" />
-      </div>
-      <br>
-      <br>
-      <div class="form-element">
-        <label for="state">State:</label>
-        <select name="state" id="state" v-model="contact.state">
-          <!-- https://www.freeformatter.com/usa-state-list-html-select.html -->
-          <option value="AL">Alabama</option>
-          <option value="AK">Alaska</option>
-          <option value="AZ">Arizona</option>
-          <option value="AR">Arkansas</option>
-          <option value="CA">California</option>
-          <option value="CO">Colorado</option>
-          <option value="CT">Connecticut</option>
-          <option value="DE">Delaware</option>
-          <option value="DC">District Of Columbia</option>
-          <option value="FL">Florida</option>
-          <option value="GA">Georgia</option>
-          <option value="HI">Hawaii</option>
-          <option value="ID">Idaho</option>
-          <option value="IL">Illinois</option>
-          <option value="IN">Indiana</option>
-          <option value="IA">Iowa</option>
-          <option value="KS">Kansas</option>
-          <option value="KY">Kentucky</option>
-          <option value="LA">Louisiana</option>
-          <option value="ME">Maine</option>
-          <option value="MD">Maryland</option>
-          <option value="MA">Massachusetts</option>
-          <option value="MI">Michigan</option>
-          <option value="MN">Minnesota</option>
-          <option value="MS">Mississippi</option>
-          <option value="MO">Missouri</option>
-          <option value="MT">Montana</option>
-          <option value="NE">Nebraska</option>
-          <option value="NV">Nevada</option>
-          <option value="NH">New Hampshire</option>
-          <option value="NJ">New Jersey</option>
-          <option value="NM">New Mexico</option>
-          <option value="NY">New York</option>
-          <option value="NC">North Carolina</option>
-          <option value="ND">North Dakota</option>
-          <option value="OH">Ohio</option>
-          <option value="OK">Oklahoma</option>
-          <option value="OR">Oregon</option>
-          <option value="PA">Pennsylvania</option>
-          <option value="RI">Rhode Island</option>
-          <option value="SC">South Carolina</option>
-          <option value="SD">South Dakota</option>
-          <option value="TN">Tennessee</option>
-          <option value="TX">Texas</option>
-          <option value="UT">Utah</option>
-          <option value="VT">Vermont</option>
-          <option value="VA">Virginia</option>
-          <option value="WA">Washington</option>
-          <option value="WV">West Virginia</option>
-          <option value="WI">Wisconsin</option>
-          <option value="WY">Wyoming</option>
-        </select>
-      </div>
-      <br>
-      <br>
-      <div class="form-element">
-        <label for="age">Age:</label>
-        <input id="age" type="number" v-model="contact.age" />
-      </div>
-      <br>
-      <br>
-      <div class="form-element">
-        <label for="link">Social Link:</label>
-        <input id="link" type="url" v-model="contact.socialLink" />
-      </div>
-      <br>
-      <br>
-      <h2>Volunteering Info</h2>
-      <div class="form-element">
-        <label for="hours">Weekly Hours:</label>
-        <input
-          id="hours"
-          type="number"
-          v-model="application.weeklyHours"
-        />
-      </div>
-      <br>
-      <br>
-      <div class="form-element">
-        <label for="time">Time of Day:</label>
-        <select id="time" v-model.number="application.isDay">
-          <option :value="true">Day(8am-5pm)</option>
-          <option :value="false">Night(5pm-9pm)</option>
-        </select>
-      </div>
-      <br>
-      <br>
-      <div class="form-element">
-        <label for="animal">Preferred Animal:</label>
-        <select id="animal" v-model.number="application.preferredAnimal">
-          <option value="Dog">Dogs</option>
-          <option value="Cat">Cats</option>
-        </select>
-      </div>
-      <br>
-      <br>
-      <div class="form-element">
-        <label for="reason">Why would you like to volunteer?</label>
-        <textarea id="reason" v-model="application.reason"></textarea>
-      </div>
-      <div class="form-element">
-      <button class="btn btn-submit">Submit</button>
+      <div id="grid">
+        <h1 id="app-title">Application</h1>
+        <p class="description"> Required fields</p>
+        <div id="error-msg" class="status-message error" v-show="errorMsg !== ''">
+          {{ errorMsg }}
+        </div>
+        <div id="contact">
+          <h2>Contact Info</h2>
+          <div class="form-element">
+            <label for="name" class="required">Name</label>
+            <input id="name" type="text" v-model="contact.contactName" />
+          </div>
+          <br />
+          <br />
+          <div class="form-element">
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel" v-model="contact.phone" />
+          </div>
+          <br />
+          <br />
+          <div class="form-element">
+            <label for="email">Email</label>
+            <input id="email" type="email" v-model="contact.email" />
+          </div>
+          <br />
+          <br />
+          <div class="form-element">
+            <label for="city">City</label>
+            <input id="city" type="text" v-model="contact.city" />
+          </div>
+          <br />
+          <br />
+          <div class="form-element">
+            <label for="state">State</label>
+            <select name="state" id="state" v-model="contact.state">
+              <!-- https://www.freeformatter.com/usa-state-list-html-select.html -->
+              <option value="AL">Alabama</option>
+              <option value="AK">Alaska</option>
+              <option value="AZ">Arizona</option>
+              <option value="AR">Arkansas</option>
+              <option value="CA">California</option>
+              <option value="CO">Colorado</option>
+              <option value="CT">Connecticut</option>
+              <option value="DE">Delaware</option>
+              <option value="DC">District Of Columbia</option>
+              <option value="FL">Florida</option>
+              <option value="GA">Georgia</option>
+              <option value="HI">Hawaii</option>
+              <option value="ID">Idaho</option>
+              <option value="IL">Illinois</option>
+              <option value="IN">Indiana</option>
+              <option value="IA">Iowa</option>
+              <option value="KS">Kansas</option>
+              <option value="KY">Kentucky</option>
+              <option value="LA">Louisiana</option>
+              <option value="ME">Maine</option>
+              <option value="MD">Maryland</option>
+              <option value="MA">Massachusetts</option>
+              <option value="MI">Michigan</option>
+              <option value="MN">Minnesota</option>
+              <option value="MS">Mississippi</option>
+              <option value="MO">Missouri</option>
+              <option value="MT">Montana</option>
+              <option value="NE">Nebraska</option>
+              <option value="NV">Nevada</option>
+              <option value="NH">New Hampshire</option>
+              <option value="NJ">New Jersey</option>
+              <option value="NM">New Mexico</option>
+              <option value="NY">New York</option>
+              <option value="NC">North Carolina</option>
+              <option value="ND">North Dakota</option>
+              <option value="OH">Ohio</option>
+              <option value="OK">Oklahoma</option>
+              <option value="OR">Oregon</option>
+              <option value="PA">Pennsylvania</option>
+              <option value="RI">Rhode Island</option>
+              <option value="SC">South Carolina</option>
+              <option value="SD">South Dakota</option>
+              <option value="TN">Tennessee</option>
+              <option value="TX">Texas</option>
+              <option value="UT">Utah</option>
+              <option value="VT">Vermont</option>
+              <option value="VA">Virginia</option>
+              <option value="WA">Washington</option>
+              <option value="WV">West Virginia</option>
+              <option value="WI">Wisconsin</option>
+              <option value="WY">Wyoming</option>
+            </select>
+          </div>
+          <br />
+          <br />
+          <div class="form-element">
+            <label for="age" class="required">Age</label>
+            <input id="age" type="number" v-model="contact.age" />
+          </div>
+          <br />
+          <br />
+          <div class="form-element">
+            <label for="link">Social Link</label>
+            <input id="link" type="url" v-model="contact.socialLink" />
+          </div>
+          <br />
+          <br />
+        </div>
+        <div id="volunteer-info">
+          <h2>Volunteering Info</h2>
+          <div class="form-element">
+            <label for="hours" class="required">Weekly Hours</label>
+            <input id="hours" type="number" v-model="application.weeklyHours" />
+          </div>
+          <br />
+          <br />
+          <div class="form-element">
+            <label for="time" class="required">Time of Day</label>
+            <select id="time" v-model.number="application.isDay">
+              <option :value="true">Day(8am-5pm)</option>
+              <option :value="false">Night(5pm-9pm)</option>
+            </select>
+          </div>
+          <br />
+          <br />
+          <div class="form-element">
+            <label for="animal" class="required">Preferred Animal</label>
+            <select id="animal" v-model.number="application.preferredAnimal">
+              <option value="Dog">Dogs</option>
+              <option value="Cat">Cats</option>
+            </select>
+          </div>
+          <br />
+          <br />
+          <div class="form-element">
+            <label for="reason">Why would you like to volunteer?</label>
+            <textarea id="reason" v-model="application.reason"></textarea>
+          </div>
+        </div>
+        <div id="submit" class="form-element">
+          <button class="btn btn-submit">Submit</button>
+        </div>
       </div>
     </form>
   </div>
@@ -167,7 +170,10 @@ export default {
   },
   methods: {
     addApplication() {
-      const applicationDTO = { contact: this.contact, application: this.application }
+      const applicationDTO = {
+        contact: this.contact,
+        application: this.application,
+      };
       applicationService
         .addApplication(applicationDTO)
         .then((response) => {
@@ -206,13 +212,60 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
 
+#app-title {
+  grid-area: title;
+}
+
+#error-msg {
+  grid-area: error;
+  text-align: center;
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+}
+
+#contact {
+  grid-area: contact;
+}
+
+#volunteer-info {
+  grid-area: volunteer;
+}
+
+#submit {
+  grid-area: submit;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "title   title"
+    "error   error"
+    "contact volunteer"
+    "submit  submit";
+}
+
+.description {
+  color: white;
+}
+
+.description::before {
+  content: "*";
+  color: red;
+}
+
+.required::after {
+  content: "*";
+  color: red;
+}
 
 #application {
   display: block;
   text-align: center;
-  font-family: 'Oxygen', sans-serif;
+  font-family: "Oxygen", sans-serif;
 }
 
 form {
@@ -223,7 +276,7 @@ form {
   border: 3px solid #f1f1f1;
   position: relative;
   height: 100%;
-  width: 600px;
+  width: 100%;
   margin: auto;
   padding: 60px 60px;
   background-color: rgb(122, 118, 118);
@@ -236,7 +289,7 @@ form {
   color: white;
   text-decoration: underline;
   text-decoration-color: cornflowerblue;
-  text-align: center;
+  /* text-align: center; */
 }
 
 h2 {
@@ -247,7 +300,8 @@ h2 {
   color: lightgray;
 }
 
-.form-element input, textarea {
+.form-element input,
+textarea {
   width: 89%;
   padding: 10px 20px;
   display: block;
@@ -258,7 +312,7 @@ h2 {
   overflow: hidden;
   margin-top: 15px;
   color: white;
-} 
+}
 
 select {
   width: 96.5%;
@@ -296,8 +350,6 @@ button:hover {
   opacity: 0.8;
 }
 
-
-
 /* .form-element input, select, textarea {
   width: 89%;
   padding: 10px 20px;
@@ -310,8 +362,6 @@ button:hover {
   margin-top: 15px;
   color: white;
 }  */
-
-
 
 /* .form-element {
   width: 700px;
