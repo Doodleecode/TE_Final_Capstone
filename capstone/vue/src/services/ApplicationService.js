@@ -8,6 +8,10 @@ export default {
 
   addApplication(application) {
     return http.post('/submit', application);
+  },
+
+  getPending() {
+    return http.get('applications/P');
   }
 
 }
