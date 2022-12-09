@@ -91,24 +91,24 @@ public class Pet {
         return isGoodWithKids;
     }
 
-    public void setGoodWithKids(boolean goodWithKids) {
-        isGoodWithKids = goodWithKids;
+    public void setGoodWithKids(boolean isGoodWithKids) {
+        this.isGoodWithKids = isGoodWithKids;
     }
 
     public boolean isGoodWithAnimals() {
-        return isGoodWithAnimals;
+        return this.isGoodWithAnimals;
     }
 
-    public void setGoodWithAnimals(boolean goodWithAnimals) {
-        isGoodWithAnimals = goodWithAnimals;
+    public void setGoodWithAnimals(boolean isGoodWithAnimals) {
+        this.isGoodWithAnimals = isGoodWithAnimals;
     }
 
     public boolean isAvailable() {
         return isAvailable;
     }
 
-    public void setAvailable(boolean available) {
-        isAvailable = available;
+    public void setAvailable(boolean isAvailable) {
+        this.isAvailable = isAvailable;
     }
 
     public String getImageLink() {

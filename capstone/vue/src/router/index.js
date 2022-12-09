@@ -7,6 +7,7 @@ import Register from '../views/Register.vue'
 import store from '../store/index'
 import AddApplication from '../views/AddApplication.vue'
 import ViewApplications from '../views/ViewApplications.vue'
+import AddAnimal from '../views/AddAnimal.vue'
 
 Vue.use(Router)
 
@@ -70,7 +71,16 @@ const router = new Router({
       meta: {
         requiresAuth: true
       }
+    },
+    {
+      path: "/pets",
+      name: "pets",
+      component: AddAnimal,
+      meta: {
+        requiresAuth: false
+      }
     }
+
   ]
 })
 
