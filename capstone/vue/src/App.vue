@@ -21,6 +21,9 @@
 </template>
 
 <style>
+
+@import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
+
 body {
   margin-left: 100px;
   margin-right: 100px;
@@ -34,11 +37,21 @@ body {
 .logo {  
   max-width: 256px;
 }
+a {
+  font-family: 'oxygen';
+  color: rgb(65, 64, 64);
+  text-decoration: none;
+}
+a:hover {
+  font-size: 35px;
+  text-decoration-line: underline;
+}
+
 #nav{
   font-size: 30px;
-  
 }
+
 body {
-  background-color: white;
+  background-color: rgb(180, 219, 245);
 }
 </style>
