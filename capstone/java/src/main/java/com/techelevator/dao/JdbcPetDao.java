@@ -14,7 +14,7 @@ public class JdbcPetDao implements PetDao {
 
     private final JdbcTemplate jdbcTemplate;
 
-    public JdbcPetDao (JdbcTemplate jdbcTemplate) {
+    public JdbcPetDao(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
@@ -37,9 +37,9 @@ public class JdbcPetDao implements PetDao {
     @Override
     public List<Pet> getAllPets() {
         List<Pet> allPets = new ArrayList<>();
-       String sql = "SELECT * FROM pets";
+        String sql = "SELECT * FROM pets";
 
-       SqlRowSet rs = jdbcTemplate.queryForRowSet(sql);
+        SqlRowSet rs = jdbcTemplate.queryForRowSet(sql);
 
         while (rs.next()) {
             Pet pet = mapRowToPet(rs);
@@ -50,8 +50,9 @@ public class JdbcPetDao implements PetDao {
 
     @Override
     public void submitPet(Pet pet) {
-        String sql = "INSERT INTO pets (pet_name, pet_type, pet_age, is_available,image_link) VALUES(?,?,?,?,?)";
-        jdbcTemplate.update(sql,pet.getName(),pet.getType(),pet.getAge(),pet.isAvailable(),pet.getImageLink());
+        String sql = "INSERT INTO pets (pet_name, pet_type, pet_age, pet_sex, pet_breed, pet_size, is_good_with_kids, is_good_with_animals, is_available, image_link) VALUES(?,?,?,?,?,?,?,?,?,?)";
+        jdbcTemplate.update(sql, pet.getName(), pet.getType(), pet.getAge(), pet.getSex(), pet.getBreed(), pet.getSize(),
+                pet.isGoodWithKids(), pet.isGoodWithAnimals(), pet.isAvailable(), pet.getImageLink());
     }
 
     @Override
@@ -69,7 +70,7 @@ public class JdbcPetDao implements PetDao {
     @Override
     public void deletePet(int id) {
         String sql = "DELETE FROM pets WHERE pet_id = ?;";
-        jdbcTemplate.update(sql,id);
+        jdbcTemplate.update(sql, id);
     }
 
     private Pet mapRowToPet(SqlRowSet rs) {
@@ -78,6 +79,11 @@ public class JdbcPetDao implements PetDao {
         pet.setName(rs.getString("pet_name"));
         pet.setType(rs.getString("pet_type"));
         pet.setAge(rs.getInt("pet_age"));
+        pet.setSex(rs.getString("pet_sex"));
+        pet.setBreed(rs.getString("pet_breed"));
+        pet.setSize(rs.getString("pet_size"));
+        pet.setGoodWithKids(rs.getBoolean("is_good_with_kids"));
+        pet.setGoodWithAnimals(rs.getBoolean("is_good_with_animals"));
         pet.setAvailable(rs.getBoolean("is_available"));
         pet.setImageLink(rs.getString("image_link"));
         return pet;
