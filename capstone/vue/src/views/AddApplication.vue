@@ -4,12 +4,12 @@
       <div id="grid">
         <h1 id="info1">Are you interested in supporting Ruff Starts, Purrfect Hearts?</h1>
         <div class="below-title">
-          <h3>
+          <h3 style="text-align:center">
             Start by filling out an application for review! Please fill out
-            all required fields. It may take up to a week to get to your
+            all required fields. It may take up to a week to approve to your
             application.
           </h3>
-          <p class="description">Required fields</p>
+          <p style="text-align:center" class="description">Required fields</p>
         </div>
 
         <div
