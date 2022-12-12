@@ -2,10 +2,10 @@
   <div id="application">
     <form v-on:submit.prevent="addApplication">
       <div id="grid">
-        <h1 id="app-title">Application</h1>
+        <h1 id="info1">Are you interested in supporting Ruff Starts, Purrfect Hearts?</h1>
         <div class="below-title">
           <h3>
-            This form allows you to apply to become a volunteer! Please fill out
+            Start by filling out an application for review! Please fill out
             all required fields. It may take up to a week to get to your
             application.
           </h3>
@@ -249,6 +249,7 @@ export default {
 }
 .below-title {
   grid-area: below;
+  margin-bottom: 30px;
 }
 
 #info2 {
@@ -256,7 +257,7 @@ export default {
   font-size: 25px;
   color: white;
   text-align: center;
-  margin-bottom: 100px;
+  
 }
 
 .description {
@@ -296,7 +297,7 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
-    "title   title"
+    "info1   info1"
     "below   below"
     "error   error"
     "contact volunteer"
