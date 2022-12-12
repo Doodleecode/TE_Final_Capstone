@@ -50,9 +50,8 @@ public class JdbcPetDao implements PetDao {
 
     @Override
     public void submitPet(Pet pet) {
-        String sql = "INSERT INTO pets (pet_name, pet_type, pet_age, pet_sex, pet_breed, pet_size, is_good_with_kids, is_good_with_dogs, is_good_with_cats, is_available, image_link) VALUES(?,?,?,?,?,?,?,?,?,?)";
-        jdbcTemplate.update(sql, pet.getName(), pet.getType(), pet.getAge(), pet.getSex(), pet.getBreed(), pet.getSize(),
-                pet.isGoodWithKids(), pet.isGoodWithDogs(), pet.isGoodWithCats(), pet.isAvailable(), pet.getImageLink());
+        String sql = "INSERT INTO pets (pet_name, pet_type, pet_age, pet_sex, pet_breed, pet_size, is_good_with_kids, is_good_with_dogs, is_good_with_cats, is_available, image_link) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+        jdbcTemplate.update(sql, pet.getName(), pet.getType(), pet.getAge(), pet.getSex(), pet.getBreed(), pet.getSize(), pet.isGoodWithKids(), pet.isGoodWithDogs(), pet.isGoodWithCats(), pet.isAvailable(), pet.getImageLink());
     }
 
     @Override
