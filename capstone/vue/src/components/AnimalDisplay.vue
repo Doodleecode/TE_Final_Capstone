@@ -1,6 +1,6 @@
 <template>
   <div class="animal-display">
-    <h3>{{ animal.name }}</h3>
+    <h3 class='animal-name'>{{ animal.name }}</h3>
     <p>{{ animal.age }}</p>
     <div class="animal-image"><img :src="animal.imageLink" /></div>
   </div>
@@ -33,5 +33,8 @@ img {
   max-height: 100%;
   max-width: 100%;
   object-fit: scale-down;
+}
+.animal-name {
+  text-transform: capitalize;
 }
 </style>
