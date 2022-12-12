@@ -77,5 +77,16 @@ public class AuthenticationController {
     public List<ApplicationDTO> getApplications(@PathVariable String id) {
         return applicationDao.listApplicationDTO(id);
     }
+
+    @PutMapping(value = "/applications/{id}/approve")
+    public void approveApplication(@PathVariable String id) {
+        applicationDao.updateStatus(id, "A");
+    }
+
+    @PutMapping(value = "/applications/{id}/deny")
+    public void rejectApplication(@PathVariable String id) {
+        applicationDao.updateStatus(id, "R");
+    }
+
 }
 
