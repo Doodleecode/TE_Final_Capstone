@@ -14,4 +14,8 @@ export default {
     return http.get('applications/P');
   }
 
+  
+
+
+
 }
