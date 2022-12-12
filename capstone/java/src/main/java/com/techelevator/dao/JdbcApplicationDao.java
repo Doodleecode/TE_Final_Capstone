@@ -69,7 +69,7 @@ public class JdbcApplicationDao implements ApplicationDao {
      * @param newStatusId : new status
      */
     @Override
-    public void updateStatus(String applicationId, String newStatusId) {
+    public void updateStatus(int applicationId, String newStatusId) {
         String sql = "UPDATE application SET status_id = ? WHERE application_id = ?";
         jdbcTemplate.update(sql, newStatusId, applicationId);
     }

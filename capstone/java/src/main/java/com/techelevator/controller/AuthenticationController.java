@@ -79,12 +79,12 @@ public class AuthenticationController {
     }
 
     @PutMapping(value = "/applications/{id}/approve")
-    public void approveApplication(@PathVariable String id) {
+    public void approveApplication(@PathVariable int id) {
         applicationDao.updateStatus(id, "A");
     }
 
     @PutMapping(value = "/applications/{id}/deny")
-    public void rejectApplication(@PathVariable String id) {
+    public void rejectApplication(@PathVariable int id) {
         applicationDao.updateStatus(id, "R");
     }
 
