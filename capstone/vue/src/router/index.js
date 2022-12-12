@@ -61,7 +61,7 @@ const router = new Router({
       name: "application",
       component: AddApplication,
       meta: {
-        requiresAuth: false
+        requiresAuth: false //still trying to center the application 
       }
     },
     {

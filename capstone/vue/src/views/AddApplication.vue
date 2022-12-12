@@ -240,12 +240,37 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
 
-#app-title {
-  grid-area: title;
+#info1 {
+  grid-area: info1;
+  font-size: 45px;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
 }
 .below-title {
   grid-area: below;
 }
+
+#info2 {
+  grid-area: info2;
+  font-size: 25px;
+  color: white;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.description {
+  grid-area: description;
+  color: white;
+}
+
+.description::before {
+  content: "*";
+  color: red;
+}
+/* #app-title {
+  grid-area: title;
+} */
 
 #error-msg {
   grid-area: error;
@@ -276,15 +301,6 @@ export default {
     "error   error"
     "contact volunteer"
     "submit  submit";
-}
-
-.description {
-  color: white;
-}
-
-.description::before {
-  content: "*";
-  color: red;
 }
 
 .required::after {
@@ -319,6 +335,7 @@ form {
   color: white;
   text-decoration: underline;
   text-decoration-color: cornflowerblue;
+  font-size: 32px;
   /* text-align: center; */
 }
 
