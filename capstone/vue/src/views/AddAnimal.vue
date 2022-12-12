@@ -6,45 +6,59 @@
     <form v-on:submit.prevent="addAnimal">
       <h1 id="animal-title">Add Animal</h1>
       <div>
-        <div>
+        <div class="form-element">
           <label for="name">Name:</label>
-          <input type="text" v-model="pet.name" />
+          <input type="text" v-model="pet.name" required/>
         </div>
-        <div>
+        <div class="form-element">
           <label for="Type">Type:</label>
-          <input type="text" v-model="pet.type" />
+          <input type="text" v-model="pet.type" required/>
         </div>
-        <div>
+        <div class="form-element">
           <label for="age">Age:</label>
-          <input type="number" v-model="pet.age" />
+          <input type="number" v-model="pet.age" required/>
         </div>
-        <div>
+        <div class="form-element">
           <label for="sex">Sex:</label>
-          <input type="text" v-model="pet.sex" />
+          <input type="text" v-model="pet.sex"  required/>
         </div>
-        <div>
+        <div class="form-element">
           <label for="breed">Breed:</label>
           <input type="text" v-model="pet.breed" />
         </div>
-        <div>
+        <div class="form-element">
           <label for="size">Weight:</label>
           <input type="text" v-model="pet.size" />
         </div>
-        <div>
-          <label for="isGoodWithAnimals">Good with Dogs?</label>
-          <input type="text" v-model="pet.goodWithAnimals" />
+        <div class="good-with">
+            <label>Good with:</label>
+          
+          <div class="form-element">
+            <label for="isGoodWithDogs" class="required">Dogs?</label>
+            <select id="isGoodWithDogs" v-model.number="pet.goodWithDogs" required>
+              <option :value="true">✅</option>
+              <option :value="false">❌</option>
+            </select>
+          </div>
+          <div class="form-element">
+            <label for="isGoodWithCats" class="required">Cats?</label>
+            <select id="isGoodWithCats" v-model.number="pet.goodWithCats" required>
+              <option :value="true">✅</option>
+              <option :value="false">❌</option>
+            </select>
+          </div>
+          <div class="form-element">
+            <label for="isGoodWithKids" class="required">Kids?</label>
+            <select id="isGoodWithKids" v-model.number="pet.goodWithKids" required>
+              <option :value="true">✅</option>
+              <option :value="false">❌</option>
+            </select>
+          </div>
         </div>
-        <div>
-          <label for="isGoodWithAnimals">Good with Cats?</label>
-          <input type="text" v-model="pet.goodWithAnimals" />
-        </div>
-        <div>
-          <label for="isGoodWithKids">Good with Kids?</label>
-          <input type="text" v-model="pet.goodWithKids" />
-        </div>
-        <div>
+
+        <div class="form-element">
           <label for="imageLink">Image Link:</label>
-          <input type="text" v-model="pet.imageLink" />
+          <input type="text" v-model="pet.imageLink" required/>
         </div>
       </div>
       <div id="submit" class="form-element">
@@ -71,15 +85,16 @@ export default {
         breed: "",
         size: "",
         imageLink: "",
-        goodWithAnimals: true,
-        goodWithKids: true,
+        goodWithDogs: null,
+        goodWithCats: null,
+        goodWithKids: null,
         available: true,
       },
     };
   },
   methods: {
     addAnimal() {
-      const pet =  this.pet ;
+      const pet = this.pet;
       animalService
         .addAnimal(pet)
         .then((response) => {
@@ -124,6 +139,18 @@ export default {
   font-family: "Oxygen", sans-serif;
 }
 
+.good-with {
+  width: 89%;
+  height: 100%;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+.good-with > div {
+  flex: 1;
+  
+}
 form {
   display: inline-block;
   margin-left: auto;
@@ -152,7 +179,7 @@ form {
 h2 {
   color: lightgray;
 }
-label{
+label {
   font-family: "Oxygen", sans-serif;
   font-size: 25px;
   color: lightgray;
@@ -163,9 +190,9 @@ textarea {
   width: 89%;
   padding: 10px 20px;
   display: block;
-  height: 15px;
+  height: 21px;
   border-radius: 10px;
-  background-color: rgba(240, 9, 9, 0.89);
+  background-color: rgba(255, 255, 255, 0.1);
   border: 2px solid rgba(255, 255, 255, 0);
   overflow: hidden;
   margin-top: 15px;
