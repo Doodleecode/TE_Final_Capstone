@@ -140,11 +140,11 @@ export default {
 }
 
 .good-with {
-  width: 89%;
+  width: 93.5%;
   height: 100%;
   display: flex;
-  justify-items: center;
-  align-items: center;
+  justify-items: space-between;
+  align-items: baseline;
 }
 
 .good-with > div {
@@ -221,7 +221,7 @@ option {
 button {
   background-color: cornflowerblue;
   color: white;
-  width: 100%;
+  width: 9%;
   padding: 10px 20px;
   display: block;
   height: 39px;
