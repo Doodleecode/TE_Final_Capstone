@@ -242,10 +242,13 @@ export default {
 
 #info1 {
   grid-area: info1;
-  font-size: 45px;
+  font-size: 35px;
   color: white;
   text-align: center;
   text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-color: cornflowerblue;
+
 }
 .below-title {
   grid-area: below;
@@ -339,10 +342,15 @@ form {
   font-size: 32px;
   /* text-align: center; */
 }
+h2 {
+  text-decoration: underline;
+  text-decoration-color: cornflowerblue;
+  color: white;
+}
 
-h2,
 h3 {
   color: lightgray;
+  
 }
 
 .form-element label {

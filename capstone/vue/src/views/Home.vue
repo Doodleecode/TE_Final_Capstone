@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <p>You must be authenticated to see this</p>
     <div class="animal-filter" :class="$store.state.filter">
       <animal-filter type="All" />
       <animal-filter type="dog" />
