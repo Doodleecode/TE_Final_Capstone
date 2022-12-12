@@ -61,7 +61,7 @@ h1 {
 }
 h3, p {
   font-family: "Oxygen", sans-serif;
-  color: rgb(77, 76, 76);
+  color: lightgray;
 }
 .animals {
   display: flex;

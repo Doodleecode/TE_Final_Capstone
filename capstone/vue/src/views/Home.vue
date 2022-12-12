@@ -22,7 +22,6 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
 
 
-
 .animal-filter {
   padding-left: 50px;
   display: flex;
@@ -36,12 +35,9 @@ export default {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
-  background-color: white;
-  border-radius: 10px;
-}
-
-animal-filter {
   background-color: rgb(122, 118, 118);
+  border-radius: 10px;
+  color: lightgray;
 }
 
 .animal-filter.All {
