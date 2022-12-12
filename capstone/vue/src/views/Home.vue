@@ -36,9 +36,10 @@ export default {
   background-size: contain;
   background-position: center center;
   background-color: rgb(122, 118, 118);
-  border-radius: 10px;
+  border: solid 3px white;
   color: lightgray;
 }
+
 
 .animal-filter.All {
   background-image: url("../assets/cat_and_dog.webp");

@@ -17,7 +17,7 @@ export default {
   background-color: rgb(122, 118, 118);
   width: 10rem;
   HEIGHT: 16.18rem;
-  border: 3px solid cornflowerblue;
+  border: 3px solid white;
 }
 
 .animal-display:hover {

@@ -23,7 +23,7 @@ export default {
   width: 150px;
   margin-top: 5px;
   margin-bottom: 5px;
-  border: 5px solid white;
+  border: 3px solid white;
 
 }
 .well:hover{
