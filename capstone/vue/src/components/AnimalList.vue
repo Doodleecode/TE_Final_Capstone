@@ -47,8 +47,21 @@ export default {
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
+
 #title {
   text-align: center;
+}
+
+h1 {
+  font-family: "Oxygen", sans-serif;
+  text-decoration: underline;
+  text-decoration-color: cornflowerblue;
+  color: rgb(77, 76, 76);
+}
+h3, p {
+  font-family: "Oxygen", sans-serif;
+  color: rgb(77, 76, 76);
 }
 .animals {
   display: flex;
