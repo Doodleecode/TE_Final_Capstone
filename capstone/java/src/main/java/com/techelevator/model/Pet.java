@@ -9,7 +9,9 @@ public class Pet {
     private String breed;
     private String size;
     private boolean isGoodWithKids;
-    private boolean isGoodWithAnimals;
+//    private boolean isGoodWithAnimals;
+    private boolean isGoodWithDogs;
+    private boolean isGoodWithCats;
     private boolean isAvailable;
     private String imageLink;
 
@@ -17,7 +19,7 @@ public class Pet {
 
     }
 
-    public Pet(int id, String name, String type, int age, String sex, String breed, String size, boolean isGoodWithKids, boolean isGoodWithAnimals, boolean isAvailable, String imageLink) {
+    public Pet(int id, String name, String type, int age, String sex, String breed, String size, boolean isGoodWithKids, boolean isGoodWithDogs, boolean isGoodWithCats, boolean isAvailable, String imageLink) {
         this.id = id;
         this.name = name;
         this.type = type;
@@ -26,7 +28,8 @@ public class Pet {
         this.breed = breed;
         this.size = size;
         this.isGoodWithKids = isGoodWithKids;
-        this.isGoodWithAnimals = isGoodWithAnimals;
+        this.isGoodWithDogs = isGoodWithDogs;
+        this.isGoodWithCats = isGoodWithCats;
         this.isAvailable = isAvailable;
         this.imageLink = imageLink;
     }
@@ -91,24 +94,33 @@ public class Pet {
         return isGoodWithKids;
     }
 
-    public void setGoodWithKids(boolean goodWithKids) {
-        isGoodWithKids = goodWithKids;
+    public void setGoodWithKids(boolean isGoodWithKids) {
+        this.isGoodWithKids = isGoodWithKids;
     }
 
-    public boolean isGoodWithAnimals() {
-        return isGoodWithAnimals;
+    public boolean isGoodWithDogs() {
+        return isGoodWithDogs;
     }
 
-    public void setGoodWithAnimals(boolean goodWithAnimals) {
-        isGoodWithAnimals = goodWithAnimals;
+    public void setGoodWithDogs(boolean goodWithDogs) {
+        isGoodWithDogs = goodWithDogs;
     }
+
+    public boolean isGoodWithCats() {
+        return isGoodWithCats;
+    }
+
+    public void setGoodWithCats(boolean goodWithCats) {
+        isGoodWithCats = goodWithCats;
+    }
+
 
     public boolean isAvailable() {
         return isAvailable;
     }
 
-    public void setAvailable(boolean available) {
-        isAvailable = available;
+    public void setAvailable(boolean isAvailable) {
+        this.isAvailable = isAvailable;
     }
 
     public String getImageLink() {

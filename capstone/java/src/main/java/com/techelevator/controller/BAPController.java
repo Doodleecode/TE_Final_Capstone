@@ -13,17 +13,17 @@ import java.util.List;
 @CrossOrigin
 public class BAPController {
 
-        private PetDao petDao;
+    private PetDao petDao;
 
-        public BAPController(PetDao petDao) {
-           this.petDao=petDao;
-        }
+    public BAPController(PetDao petDao) {
+        this.petDao = petDao;
+    }
 
-        @GetMapping("/pets")
-        public List<Pet> getAllPets() throws InterruptedException{
-            Thread.sleep(1000);
-            return petDao.getAllPets();
-        }
+    @GetMapping("/pets")
+    public List<Pet> getAllPets() throws InterruptedException {
+        Thread.sleep(1000);
+        return petDao.getAllPets();
+    }
 
     @GetMapping("/pets/{id}")
     public Pet findTransaction(@PathVariable int id) {
@@ -41,15 +41,14 @@ public class BAPController {
     }
 
     @PutMapping("/pets/{id}")
-    public void changePetAvailability(@PathVariable int id){
+    public void changePetAvailability(@PathVariable int id) {
         petDao.updateAvailability(id);
     }
 
     @DeleteMapping("/pets/{id}")
-    public void deletePet(@PathVariable int id){
-            petDao.deletePet(id);
+    public void deletePet(@PathVariable int id) {
+        petDao.deletePet(id);
     }
 
 
-
-    }
+}

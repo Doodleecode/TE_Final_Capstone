@@ -2,30 +2,36 @@
   <div class="animal-display">
     <h3>{{ animal.name }}</h3>
     <p>{{ animal.age }}</p>
-    <img :src="animal.imageLink"/>
+    <div class="animal-image"><img :src="animal.imageLink" /></div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["animal"]
+  props: ["animal"],
 };
 </script>
 
 <style scoped>
 .animal-display {
-  max-width: 10%;
-  border: 1px solid rgb(0, 64, 184);  
+  width: 10rem;
+  HEIGHT: 16.18rem;
+  border: 1px solid rgb(0, 64, 184);
 }
 
 .animal-display:hover {
   cursor: pointer;
-  transform: scale(1.2);
+  /* transform: scale(1.2) */
   transition: all 0.2s ease-in-out;
   box-shadow: 0 0 20px black;
 }
- img {
-   max-width: 200px;
-   max-height: 200px;   
- }
+.animal-image {
+  height: 10rem;
+  
+}
+img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: scale-down;
+}
 </style>

@@ -305,7 +305,7 @@ textarea {
   width: 89%;
   padding: 10px 20px;
   display: block;
-  height: 15px;
+  height: 21px;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.1);
   border: 2px solid rgba(255, 255, 255, 0);
