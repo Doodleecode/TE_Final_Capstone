@@ -12,6 +12,14 @@ export default {
 
   getPending() {
     return http.get('applications/P');
+  },
+
+  putApprove(id) {
+    return http.put('applications/' + id + "/approve")
+  },
+
+  putDeny(id) {
+    return http.put('applications/' + id + "/deny")
   }
 
   

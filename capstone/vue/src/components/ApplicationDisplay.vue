@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import applicationService from "../services/ApplicationService";
 export default {
   props: ["application"],
   data() {
@@ -33,17 +34,27 @@ export default {
   },
   methods: {
     onApprove() {
-      //some application service to approve then
-      this.isHidden = true;
+      applicationService.putApprove(this.application.application.id).then(() => {
+        this.isHidden = true;
+    });
+      
     },
     onDeny() {
-      this.isHidden = true;
+      applicationService.putDeny(this.application.application.id).then(() => {
+        this.isHidden = true;
+    });
     }
   }
 };
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
+
+#application {
+  
+}
+
 .centered {
   text-align: center;
 }
@@ -66,6 +77,9 @@ div.application {
   margin: 10px;
   width: 100%;
   background-color: white;
+  display: block;
+  text-align: center;
+  font-family: "Oxygen", sans-serif;
 }
 
 div.application p {
