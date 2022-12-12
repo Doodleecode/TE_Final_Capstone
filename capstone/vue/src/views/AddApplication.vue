@@ -32,7 +32,7 @@
           </div>
           <br />
           <br />
-          <h3>Provide at least one of the following</h3>
+          <h3>Provide at least one of the following*</h3>
           <div class="form-element">
             <label for="phone">Phone*</label>
             <input id="phone" type="tel" v-model="contact.phone" />
