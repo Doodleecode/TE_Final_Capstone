@@ -60,11 +60,12 @@ export default {
 .animal {
   background-color: #f7fafc;
   border-radius: 10px;
-  padding: 40px;  
   margin: 20px;
+  padding: 2%;  
+  
   text-align: center;
-  width: 20%;
-  max-width: 212.5px;
+  /* max-width: 20%;
+  max-height: 32.36%; */
 }
 .loading {
   flex: 3;

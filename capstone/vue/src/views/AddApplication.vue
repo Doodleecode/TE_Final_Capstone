@@ -2,29 +2,44 @@
   <div id="application">
     <form v-on:submit.prevent="addApplication">
       <div id="grid">
-        <h1 id="info1">Are you interested in supporting Ruff Starts, Perfect Hearts?</h1>
-        <h2 id="info2">Start by filling out an application for review and we will notify you when it gets approved!</h2>
-        <!-- <h2 id="app-title">Application</h2> -->
-        <p class="description"> Required fields</p>
-        <div id="error-msg" class="status-message error" v-show="errorMsg !== ''">
+        <h1 id="app-title">Application</h1>
+        <div class="below-title">
+          <h3>
+            This form allows you to apply to become a volunteer! Please fill out
+            all required fields. It may take up to a week to get to your
+            application.
+          </h3>
+          <p class="description">Required fields</p>
+        </div>
+
+        <div
+          id="error-msg"
+          class="status-message error"
+          v-show="errorMsg !== ''"
+        >
           {{ errorMsg }}
         </div>
         <div id="contact">
           <h2>Contact Info</h2>
           <div class="form-element">
             <label for="name" class="required">Name</label>
-            <input id="name" type="text" v-model="contact.contactName" />
+            <input
+              id="name"
+              type="text"
+              v-model="contact.contactName"
+              required
+            />
           </div>
           <br />
           <br />
+          <h3>Provide at least one of the following</h3>
           <div class="form-element">
-            <label for="phone">Phone</label>
+            <label for="phone">Phone*</label>
             <input id="phone" type="tel" v-model="contact.phone" />
           </div>
           <br />
-          <br />
           <div class="form-element">
-            <label for="email">Email</label>
+            <label for="email">Email*</label>
             <input id="email" type="email" v-model="contact.email" />
           </div>
           <br />
@@ -96,7 +111,7 @@
           <br />
           <div class="form-element">
             <label for="age" class="required">Age</label>
-            <input id="age" type="number" v-model="contact.age" />
+            <input id="age" type="number" v-model="contact.age" required />
           </div>
           <br />
           <br />
@@ -111,13 +126,18 @@
           <h2>Volunteering Info</h2>
           <div class="form-element">
             <label for="hours" class="required">Weekly Hours</label>
-            <input id="hours" type="number" v-model="application.weeklyHours" />
+            <input
+              id="hours"
+              type="number"
+              v-model="application.weeklyHours"
+              required
+            />
           </div>
           <br />
           <br />
           <div class="form-element">
             <label for="time" class="required">Time of Day</label>
-            <select id="time" v-model.number="application.isDay">
+            <select id="time" v-model.number="application.isDay" required>
               <option :value="true">Day(8am-5pm)</option>
               <option :value="false">Night(5pm-9pm)</option>
             </select>
@@ -126,7 +146,11 @@
           <br />
           <div class="form-element">
             <label for="animal" class="required">Preferred Animal</label>
-            <select id="animal" v-model.number="application.preferredAnimal">
+            <select
+              id="animal"
+              v-model.number="application.preferredAnimal"
+              required
+            >
               <option value="Dog">Dogs</option>
               <option value="Cat">Cats</option>
             </select>
@@ -159,19 +183,23 @@ export default {
         email: "",
         city: "",
         state: "",
-        age: 18,
+        age: null,
         socialLink: "",
       },
       application: {
-        weeklyHours: 0,
-        isDay: true,
-        preferredAnimal: "",
+        weeklyHours: null,
+        isDay: null,
+        preferredAnimal: null,
         reason: "",
       },
     };
   },
   methods: {
     addApplication() {
+      if (this.contact.phone == "" && this.contact.email == "") {
+        this.errorMsg = "Please enter a phone and/or email";
+        return;
+      }
       const applicationDTO = {
         contact: this.contact,
         application: this.application,
@@ -196,11 +224,7 @@ export default {
     handleErrorResponse(error, verb) {
       if (error.response) {
         this.errorMsg =
-          "Error " +
-          verb +
-          " application. Response received was '" +
-          error.response.statusText +
-          "'.";
+          "Error " + verb + " application." + error.response.statusText + "'.";
       } else if (error.request) {
         this.errorMsg =
           "Error " + verb + " application. Server could not be reached.";
@@ -222,6 +246,9 @@ export default {
   color: white;
   text-align: center;
   text-transform: uppercase;
+}
+.below-title {
+  grid-area: below;
 }
 
 #info2 {
@@ -269,9 +296,9 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
-    "info1   info1"
-    "info2   info2"
-    "description ."
+    "title   title"
+    "below   below"
+    "error   error"
     "contact volunteer"
     "submit  submit";
 }
@@ -312,7 +339,8 @@ form {
   /* text-align: center; */
 }
 
-h2 {
+h2,
+h3 {
   color: lightgray;
 }
 
@@ -325,7 +353,7 @@ textarea {
   width: 89%;
   padding: 10px 20px;
   display: block;
-  height: 15px;
+  height: 21px;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.1);
   border: 2px solid rgba(255, 255, 255, 0);

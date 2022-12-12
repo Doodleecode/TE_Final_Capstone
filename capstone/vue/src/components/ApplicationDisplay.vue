@@ -1,6 +1,8 @@
 <template>
   <div class="application" v-bind:key="application.application.id" v-if="!isHidden">
-    <h3>{{ application.contact.contactName }}, {{ application.contact.age }}</h3>
+    <div class="centered">
+      <h3>{{ application.contact.contactName }}, {{ application.contact.age }}</h3>
+    </div>
     <div class="info">
       <p>Hours: {{ application.application.weeklyHours }}</p>
       <div>
@@ -9,7 +11,10 @@
       </div>
       <p>Animal: {{ application.application.preferredAnimal }}</p>
     </div>
-    <p>{{ application.application.reason }}</p>
+    <div class="centered">
+      <p>{{ application.application.reason }}</p>
+    </div>
+    
     <div>
       <button @click="onApprove()">Approve</button>
       <button @click="onDeny()">Deny</button>
@@ -39,23 +44,35 @@ export default {
 </script>
 
 <style scoped>
+.centered {
+  text-align: center;
+}
+
 div.info {
+  width: 100%;
   display: flex;
   align-content: space-between;
 }
+div.info > * {
+  flex: 1;
+  text-align: center;
 
-div.main div.application {
+}
+
+div.application {
   border: 1px black solid;
   border-radius: 6px;
   padding: 1rem;
   margin: 10px;
+  width: 100%;
+  background-color: white;
 }
 
-div.main div.application p {
+div.application p {
   margin: 20px;
 }
 
-div.main div.application h3 {
+div.application h3 {
   display: inline-block;
 }
 </style>
