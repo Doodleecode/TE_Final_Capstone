@@ -18,28 +18,30 @@
     </div>
   </body>
 </template>
+
+
 <style scoped>
 #nav > a {
   border-right: 2px solid black;
   padding: 10px;
-  /* margin-right: 10px; */
 }
+
 #nav > a:last-child {
   border: 0px;
 }
 </style>
+
 <style>
 
 @import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
-
+* {
+  box-sizing: border-box;
+}
 .flex-display {
   display: flex;
   align-items: center;
-
 }
 body {
-  margin-left: 100px;
-  margin-right: 100px;
   background-color: rgb(180, 219, 245);
 }
 
@@ -62,6 +64,7 @@ a {
 a:hover {
   font-size: 35px;
   text-decoration-line: underline;
+  text-decoration-color: cornflowerblue;
 }
 
 #nav{

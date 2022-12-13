@@ -57,7 +57,7 @@ div {
 div.info {
   width: 100%;
   display: flex;
-  align-content: space-between;
+  /* align-content: space-between; */
 }
 div.info > * {
   flex: 1;

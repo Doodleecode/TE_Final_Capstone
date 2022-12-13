@@ -272,9 +272,7 @@ export default {
   content: "*";
   color: red;
 }
-/* #app-title {
-  grid-area: title;
-} */
+
 
 #error-msg {
   grid-area: error;
@@ -326,9 +324,8 @@ form {
   border: 3px solid white;
   position: relative;
   height: 100%;
-  width: 100%;
+  padding: 1vw;
   margin: auto;
-  padding: 60px 60px;
   background-color: rgb(122, 118, 118);
 }
 
@@ -372,7 +369,7 @@ textarea {
 }
 
 select {
-  width: 96.5%;
+  width: 90%;
   background-color: rgba(255, 255, 255, 0.1);
   padding: 10px 20px;
   display: block;
@@ -407,46 +404,4 @@ button:hover {
   opacity: 0.8;
 }
 
-/* .form-element input, select, textarea {
-  width: 89%;
-  padding: 10px 20px;
-  display: block;
-  height: 15px;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0);
-  overflow: hidden;
-  margin-top: 15px;
-  color: white;
-}  */
-
-/* .form-element {
-  width: 700px;
-  padding-bottom: 10px;
-  display: flex;
-}
-.form-element label {
-  width: 100px;
-  vertical-align: top;
-}
-.form-element input,
-select,
-textarea, .btn {
-  width: 400px;
-  font-size: 1.1rem;
-  flex: 1;
-}
-
-textarea {
-  display: block;
-}
-.form-element textarea {
-  height: 150px;
-}
-.actions {
-  float: right;
-}
-.actions button {
-  margin-left: 10px;
-} */
 </style>

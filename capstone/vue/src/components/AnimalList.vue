@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 id="title">Adoptable Animals</h1>
-    <div class="animals">
+    <div class="animal-display">
       <div class="loading" v-if="isLoading">
         <img src="../assets/cat_loading.gif" />
       </div>
@@ -46,8 +46,18 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
+
+.animal-display {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  /* flex-wrap: wrap;  */
+  font-family: "Oxygen", sans-serif;
+  color: lightgray;
+}
 
 #title {
   text-align: center;
@@ -63,18 +73,10 @@ h3, p {
   font-family: "Oxygen", sans-serif;
   color: lightgray;
 }
-.animals {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
+
 .animal {
-  background-color: #f7fafc;
-  border-radius: 10px;
-  margin: 20px;
-  padding: 2%;  
+  margin: 1%;
+  padding: 1.5%;  
   
   text-align: center;
   /* max-width: 20%;

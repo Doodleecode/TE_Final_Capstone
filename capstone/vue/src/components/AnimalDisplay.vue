@@ -1,5 +1,5 @@
 <template>
-  <div class="animal-display">
+  <div class="flex-display">
     <h3 class='animal-name'>{{ animal.name }}</h3>
     <p>{{ animal.age }}</p>
     <div class="animal-image"><img :src="animal.imageLink" /></div>
@@ -13,23 +13,27 @@ export default {
 </script>
 
 <style scoped>
-.animal-display {
+
+.flex-display {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
   background-color: rgb(122, 118, 118);
-  width: 10rem;
-  HEIGHT: 16.18rem;
   border: 3px solid white;
+  width: 10vw;
+  flex-grow: 1;
 }
 
-.animal-display:hover {
+.flex-display:hover {
   cursor: pointer;
-  /* transform: scale(1.2) */
   transition: all 0.2s ease-in-out;
   box-shadow: 0 0 20px black;
 }
 .animal-image {
   height: 10rem;
-  
 }
+
 img {
   max-height: 100%;
   max-width: 100%;

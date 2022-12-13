@@ -1,6 +1,6 @@
 <template>
   <div>
-      <h1>Applications</h1>
+      <h1>Pending Applications</h1>
       <application-list/>
   </div>
 </template>
@@ -15,5 +15,8 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
 
+h1 {
+  text-align: center;
+}
 
 </style>
