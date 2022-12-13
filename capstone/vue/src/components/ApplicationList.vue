@@ -38,7 +38,7 @@ export default {
 <style scoped>
 
 div.main {
-  margin: 1rem 0;
+  margin: 0rem 0;
 
 }
 div.main div.well-display {

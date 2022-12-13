@@ -15,7 +15,7 @@
       <p>{{ application.application.reason }}</p>
     </div>
     
-    <div>
+    <div class="flex-display">
       <button @click="onApprove()">Approve</button>
       <button @click="onDeny()">Deny</button>
     </div>
@@ -67,7 +67,6 @@ div.info > * {
 div.application {
   border: 3px white solid;
   padding: 1rem;
-  margin: 10px;
   width: 100%;
   display: block;
   text-align: center;
