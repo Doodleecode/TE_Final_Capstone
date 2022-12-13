@@ -51,14 +51,9 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
 
-#application {
-  
+div {
+  background-color: rgb(122, 118, 118);
 }
-
-.centered {
-  text-align: center;
-}
-
 div.info {
   width: 100%;
   display: flex;
@@ -67,16 +62,13 @@ div.info {
 div.info > * {
   flex: 1;
   text-align: center;
-
 }
 
 div.application {
-  border: 1px black solid;
-  border-radius: 6px;
+  border: 3px white solid;
   padding: 1rem;
   margin: 10px;
   width: 100%;
-  background-color: white;
   display: block;
   text-align: center;
   font-family: "Oxygen", sans-serif;
@@ -88,5 +80,9 @@ div.application p {
 
 div.application h3 {
   display: inline-block;
+}
+
+button {
+  width: 100%;
 }
 </style>

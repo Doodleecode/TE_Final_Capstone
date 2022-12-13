@@ -156,7 +156,7 @@ form {
   margin-left: auto;
   margin-right: auto;
   text-align: left;
-  border: 3px solid #f1f1f1;
+  border: 3px solid white;
   position: relative;
   height: 100%;
   width: 100%;

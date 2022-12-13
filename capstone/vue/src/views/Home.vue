@@ -42,11 +42,11 @@ export default {
 
 
 .animal-filter.All {
-  background-image: url("../assets/cat_and_dog.webp");
+  background-image: url("../assets/cat_and_dog.png");
 }
 
 .animal-filter.dog {
-  background-image: url("../assets/dog.jpg");
+  background-image: url("../assets/dog.png");
 }
 
 .animal-filter.cat {
