@@ -4,12 +4,12 @@
       <div id="grid">
         <h1 id="info1">Are you interested in supporting Ruff Starts, Purrfect Hearts?</h1>
         <div class="below-title">
-          <h3>
+          <h3 style="text-align:center">
             Start by filling out an application for review! Please fill out
-            all required fields. It may take up to a week to get to your
+            all required fields. It may take up to a week to approve to your
             application.
           </h3>
-          <p class="description">Required fields</p>
+          <p style="text-align:center" class="description">Required fields</p>
         </div>
 
         <div
@@ -32,7 +32,7 @@
           </div>
           <br />
           <br />
-          <h3>Provide at least one of the following</h3>
+          <h3>Provide at least one of the following*</h3>
           <div class="form-element">
             <label for="phone">Phone*</label>
             <input id="phone" type="tel" v-model="contact.phone" />
@@ -242,10 +242,13 @@ export default {
 
 #info1 {
   grid-area: info1;
-  font-size: 45px;
+  font-size: 35px;
   color: white;
   text-align: center;
   text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-color: cornflowerblue;
+
 }
 .below-title {
   grid-area: below;
@@ -320,7 +323,7 @@ form {
   margin-left: auto;
   margin-right: auto;
   text-align: left;
-  border: 3px solid #f1f1f1;
+  border: 3px solid white;
   position: relative;
   height: 100%;
   width: 100%;
@@ -339,10 +342,15 @@ form {
   font-size: 32px;
   /* text-align: center; */
 }
+h2 {
+  text-decoration: underline;
+  text-decoration-color: cornflowerblue;
+  color: white;
+}
 
-h2,
 h3 {
   color: lightgray;
+  
 }
 
 .form-element label {

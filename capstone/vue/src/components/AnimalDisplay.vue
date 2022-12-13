@@ -14,9 +14,10 @@ export default {
 
 <style scoped>
 .animal-display {
+  background-color: rgb(122, 118, 118);
   width: 10rem;
   HEIGHT: 16.18rem;
-  border: 1px solid rgb(0, 64, 184);
+  border: 3px solid white;
 }
 
 .animal-display:hover {

@@ -4,32 +4,32 @@
       {{ errorMsg }}
     </div>
     <form v-on:submit.prevent="addAnimal">
-      <h1 id="animal-title">Add Animal</h1>
+      <h1 id="animal-title">Add an Adoptable Pet</h1>
       <div>
         <div class="form-element">
           <label for="name">Name:</label>
           <input type="text" v-model="pet.name" required/>
-        </div>
+        </div><br><br>
         <div class="form-element">
           <label for="Type">Type:</label>
           <input type="text" v-model="pet.type" required/>
-        </div>
+        </div><br><br>
         <div class="form-element">
           <label for="age">Age:</label>
           <input type="number" v-model="pet.age" required/>
-        </div>
+        </div><br><br>
         <div class="form-element">
           <label for="sex">Sex:</label>
           <input type="text" v-model="pet.sex"  required/>
-        </div>
+        </div><br><br>
         <div class="form-element">
           <label for="breed">Breed:</label>
           <input type="text" v-model="pet.breed" />
-        </div>
+        </div><br><br>
         <div class="form-element">
-          <label for="size">Weight:</label>
+          <label for="size">Size (S/M/L/XL/XXL):</label>
           <input type="text" v-model="pet.size" />
-        </div>
+        </div><br><br>
         <div class="good-with">
             <label>Good with:</label>
           
@@ -54,7 +54,7 @@
               <option :value="false">❌</option>
             </select>
           </div>
-        </div>
+        </div><br><br>
 
         <div class="form-element">
           <label for="imageLink">Image Link:</label>
@@ -156,7 +156,7 @@ form {
   margin-left: auto;
   margin-right: auto;
   text-align: left;
-  border: 3px solid #f1f1f1;
+  border: 3px solid white;
   position: relative;
   height: 100%;
   width: 100%;
@@ -221,7 +221,7 @@ option {
 button {
   background-color: cornflowerblue;
   color: white;
-  width: 9%;
+  width: 93%;
   padding: 10px 20px;
   display: block;
   height: 39px;

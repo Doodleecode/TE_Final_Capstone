@@ -4,13 +4,13 @@
       <div>
         <img class="logo" src="./assets/RSPH.png" />
       </div>
-      <div id="nav">
-        <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;|&nbsp;
-        <router-link v-bind:to="{ name: 'application' }">Application</router-link>&nbsp;|&nbsp;
-        <router-link v-bind:to="{ name: 'login' }">Login</router-link>&nbsp;|&nbsp;
-        <router-link v-bind:to="{ name: 'pendings' }">Pendings</router-link>&nbsp;|&nbsp;
-        <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout&nbsp;|&nbsp;</router-link>
-        <router-link v-bind:to="{ name: 'pets' }">Pets</router-link>  
+      <div id="nav" class="flex-display">
+        <router-link v-bind:to="{ name: 'home' }">Home</router-link>
+        <router-link v-bind:to="{ name: 'application' }">Application</router-link>
+        <router-link v-bind:to="{ name: 'login' }">Login</router-link>
+        <router-link v-bind:to="{ name: 'pendings' }">Pending Applications</router-link>
+        <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
+        <router-link v-bind:to="{ name: 'pets' }">Add Pet</router-link>  
       </div>      
     </div>
     <div>
@@ -18,11 +18,25 @@
     </div>
   </body>
 </template>
-
+<style scoped>
+#nav > a {
+  border-right: 2px solid black;
+  padding: 10px;
+  /* margin-right: 10px; */
+}
+#nav > a:last-child {
+  border: 0px;
+}
+</style>
 <style>
 
 @import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
 
+.flex-display {
+  display: flex;
+  align-items: center;
+
+}
 body {
   margin-left: 100px;
   margin-right: 100px;

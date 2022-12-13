@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <p>You must be authenticated to see this</p>
     <div class="animal-filter" :class="$store.state.filter">
       <animal-filter type="All" />
       <animal-filter type="dog" />
@@ -23,7 +22,6 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
 
 
-
 .animal-filter {
   padding-left: 50px;
   display: flex;
@@ -37,20 +35,18 @@ export default {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
-  background-color: white;
-  border-radius: 10px;
+  background-color: rgb(122, 118, 118);
+  border: solid 3px white;
+  color: lightgray;
 }
 
-animal-filter {
-  background-color: rgb(122, 118, 118);
-}
 
 .animal-filter.All {
-  background-image: url("../assets/cat_and_dog.webp");
+  background-image: url("../assets/cat_and_dog.png");
 }
 
 .animal-filter.dog {
-  background-image: url("../assets/dog.jpg");
+  background-image: url("../assets/dog.png");
 }
 
 .animal-filter.cat {
