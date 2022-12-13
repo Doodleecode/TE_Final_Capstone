@@ -8,6 +8,7 @@ import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
 import javax.sql.RowSet;
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,8 +71,13 @@ public class JdbcApplicationDao implements ApplicationDao {
      */
     @Override
     public void updateStatus(int applicationId, String newStatusId) {
-        String sql = "UPDATE application SET status_id = ? WHERE application_id = ?";
-        jdbcTemplate.update(sql, newStatusId, applicationId);
+        String sql1 = "UPDATE application SET status_id = ? WHERE application_id = ?";
+        jdbcTemplate.update(sql1, newStatusId, applicationId);
+        String sql2 = "SELECT user_id FROM shelter_user s JOIN contact c ON" +
+                " s.contact_id = c.contact_id JOIN application a ON c.contact_id = a.contact_id";
+        int userId = jdbcTemplate.queryForObject(sql2, int.class);
+        String sql3 = "UPDATE shelter_user SET user_role = 'ROLE_VOLUNTEER' WHERE user_id = ?";
+        jdbcTemplate.update(sql3, userId);
     }
 
     /**
@@ -80,7 +86,7 @@ public class JdbcApplicationDao implements ApplicationDao {
      * @param applicationDTO
      */
     @Override
-    public void createApp(ApplicationDTO applicationDTO) {
+    public void createApp(ApplicationDTO applicationDTO, Principal principal) {
         String sql1 = "INSERT INTO contact (contact_name, phone, email, city, state, age, social_link) " +
                 " VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING contact_id;";
         Contact contact = applicationDTO.getContact();
@@ -91,7 +97,8 @@ public class JdbcApplicationDao implements ApplicationDao {
         Application application = applicationDTO.getApplication();
         int applicationId = jdbcTemplate.queryForObject(sql2, int.class, contactId, 'P', application.getWeeklyHours(),
                 application.isDay(), application.getPreferredAnimal(), application.getReason());
-        //some logic for user creation???
+        String sql3 = "UPDATE shelter_user SET contact_id = ? WHERE username = ?";
+        jdbcTemplate.update(sql3, contactId, principal.getName());
     }
 
     /**

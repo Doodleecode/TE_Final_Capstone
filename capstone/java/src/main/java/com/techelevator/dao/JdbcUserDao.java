@@ -77,7 +77,7 @@ public class JdbcUserDao implements UserDao {
     }
 
     @Override
-    public boolean create(String username, String password, String role) { //TODO take out role (avoiding merge conflicts)
+    public boolean create(String username, String password, String role) {
         String insertUserSql = "insert into shelter_user (username,password_hash,user_role) values (?,?,?)";
         String password_hash = new BCryptPasswordEncoder().encode(password);
 

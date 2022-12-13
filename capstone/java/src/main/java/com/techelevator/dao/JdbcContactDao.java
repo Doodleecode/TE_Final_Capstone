@@ -40,8 +40,8 @@ public class JdbcContactDao implements ContactDao {
         if (role == null) throw new IllegalArgumentException("Role cannot be null");
         String sql = "SELECT * FROM contact c " +
                 " JOIN user u ON c.contact_id = u.contact_id" +
-                " WHERE role = ?";
-        SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql, role);
+                " WHERE role = 'USER_VOLUNTEER' OR role = 'USER_ADMIN";
+        SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql);
         return createListOfContacts(rowSet);
     }
 

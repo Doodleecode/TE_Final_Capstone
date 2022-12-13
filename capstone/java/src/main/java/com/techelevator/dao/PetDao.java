@@ -13,7 +13,9 @@ public interface PetDao {
 
     void submitPet(Pet pet);
 
-    void updateAvailability(int id);
+    void updateAvailability(int id, boolean isAvailable);
 
     void deletePet(int id);
+
+    void updatePet(Pet pet, int id);
 }

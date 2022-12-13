@@ -65,4 +65,6 @@ CREATE TABLE application (
 
 INSERT INTO status(status_id, status_name) VALUES ('A', 'Approved'), ('R', 'Rejected'), ('P', 'Pending');
 
+INSERT INTO shelter_user(username, password_hash, user_role) VALUES ('admin', '$2a$10$B78o/ehFJ3NcDncPzZ7BwOiCD6MRQtyrP6UzWQ.f53JVLAMbCgxeG', 'ROLE_ADMIN');
+
 COMMIT;
