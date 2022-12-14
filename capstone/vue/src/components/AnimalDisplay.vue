@@ -3,12 +3,20 @@
     <h3 class='animal-name'>{{ animal.name }}</h3>
     <p>{{ animal.age }}</p>
     <div class="animal-image"><img :src="animal.imageLink" /></div>
+    <router-link class="btn updateAnimal" :to="{ name: 'Edit', params: {petID: $route.params.petID} }">
+    <button v-if="isAdmin">Update</button>
+    </router-link>
   </div>
 </template>
 
 <script>
 export default {
   props: ["animal"],
+  computed: {
+    isAdmin() {
+      return this.$store.getters.isAdmin;
+    },
+  }
 };
 </script>
 

@@ -12,6 +12,9 @@ export default {
 
   addAnimal(pet) {
     return axios.post('/pets', pet);
-  }
+  },
 
+  editAnimal(pet) {
+    return axios.put(`/pets/${pet.id}`, pet);
+  }
 }
