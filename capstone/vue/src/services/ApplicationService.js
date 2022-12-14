@@ -20,10 +20,9 @@ export default {
 
   putDeny(id) {
     return http.put('applications/' + id + "/deny")
+  },
+
+  getContact() {
+    return http.get('/volunteers')
   }
-
-  
-
-
-
 }

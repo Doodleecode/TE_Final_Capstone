@@ -67,4 +67,7 @@ INSERT INTO status(status_id, status_name) VALUES ('A', 'Approved'), ('R', 'Reje
 
 INSERT INTO shelter_user(username, password_hash, user_role) VALUES ('admin', '$2a$10$B78o/ehFJ3NcDncPzZ7BwOiCD6MRQtyrP6UzWQ.f53JVLAMbCgxeG', 'ROLE_ADMIN');
 
+INSERT INTO contact (contact_name, phone, email, city, state, age, social_link)
+VALUES ('Kevin', '1234567890', 'kevinhsu16739@gmail.com', 'Columbus', 'OH', 23, '123@link');
+
 COMMIT;

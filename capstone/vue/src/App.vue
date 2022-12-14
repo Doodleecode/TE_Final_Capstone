@@ -11,6 +11,7 @@
         <router-link v-bind:to="{ name: 'pendings' }">Pending Applications</router-link>
         <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
         <router-link v-bind:to="{ name: 'pets' }">Add Pet</router-link>  
+        <router-link v-bind:to="{ name: 'directory' }">Directory</router-link>
       </div>      
     </div>
     <div>

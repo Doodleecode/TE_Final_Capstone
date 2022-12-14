@@ -8,6 +8,7 @@ import store from '../store/index'
 import AddApplication from '../views/AddApplication.vue'
 import ViewApplications from '../views/ViewApplications.vue'
 import AddAnimal from '../views/AddAnimal.vue'
+import Directory from '../views/Directory.vue'
 
 Vue.use(Router)
 
@@ -78,6 +79,14 @@ const router = new Router({
       component: AddAnimal,
       meta: {
         requiresAuth: false //switch to true after CSS
+      }
+    },
+    {
+      path: "/directory",
+      name: "directory",
+      component: Directory,
+      meta: {
+        requiresAuth: false
       }
     }
 
