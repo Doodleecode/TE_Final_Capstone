@@ -66,11 +66,16 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
+  height: 150px;
 }
 
 .logo {  
-  max-width: 256px;
+  width: 220px;
+  margin-left: -20%; 
+  margin-top: -15%;
+  /* margin-bottom: 100%; */
+  /* height: 200px; */
 }
 
 a {

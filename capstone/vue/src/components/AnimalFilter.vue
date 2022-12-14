@@ -23,12 +23,11 @@ export default {
   width: 150px;
   margin-top: 5px;
   margin-bottom: 5px;
-  border: 3px solid white;
-
+  font-size: 35px;
 }
+
 .well:hover{
   letter-spacing: 5px;
-  border-top: 5px solid cornflowerblue;
   border-bottom: 5px solid cornflowerblue;;  
   transition: all 0.3s ease-in-out;
   
@@ -36,7 +35,6 @@ export default {
 
 .filtered{
   letter-spacing: 5px;
-  border-top: 5px solid cornflowerblue;
   border-bottom: 5px solid cornflowerblue;  
   transition: all 0.3s ease-in-out;
 

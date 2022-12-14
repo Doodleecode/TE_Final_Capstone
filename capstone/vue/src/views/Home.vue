@@ -1,8 +1,14 @@
 <template>
   <div class="home">
     <div class="animal-filter" :class="$store.state.filter">
-      <animal-filter type="All" />
+      <h1 id="title">Adoptable &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;Animals &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+      <!-- <animal-filter type="All" />
       <animal-filter type="dog" />
+      <animal-filter type="cat" /> -->
+    </div>
+    <div class="flex-display">
+      <animal-filter type="All" />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      <animal-filter type="dog" />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
       <animal-filter type="cat" />
     </div>
     <animal-list />
@@ -20,7 +26,20 @@ export default {
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
-
+.flex-display {
+  display:flex;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 50px;
+  font-family: "Oxygen", sans-serif;
+  background-color: rgb(122, 118, 118);
+  border: solid 3px white;
+  border-top: none;
+  color: lightgray;
+    background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
 
 .animal-filter {
   padding-left: 50px;
@@ -37,10 +56,22 @@ export default {
   background-position: center center;
   background-color: rgb(122, 118, 118);
   border: solid 3px white;
+  border-bottom: none;
   color: lightgray;
+  /* width: 85%; */
+  height: 185px;
 }
 
-
+.animal-filter {
+  display: flex;
+  align-content: start;
+}
+#title {
+  display: flex;
+ 
+  color: white;
+  font-size: 85px;
+}
 .animal-filter.All {
   background-image: url("../assets/cat_and_dog.png");
 }

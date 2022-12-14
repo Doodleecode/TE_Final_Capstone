@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 id="title">Adoptable Animals</h1>
+
     <div class="animal-display">
       <div class="loading" v-if="isLoading">
         <img src="../assets/cat_loading.gif" />

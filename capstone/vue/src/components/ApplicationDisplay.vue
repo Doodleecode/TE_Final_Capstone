@@ -16,7 +16,7 @@
     </div>
     
     <div class="flex-display">
-      <button @click="onApprove()">Approve</button>
+      <button @click="onApprove()">Approve</button> 
       <button @click="onDeny()">Deny</button>
     </div>
   </div>
@@ -66,6 +66,7 @@ div.info > * {
 
 div.application {
   border: 3px white solid;
+  border-top: none;
   padding: 1rem;
   width: 100%;
   display: block;
@@ -89,11 +90,17 @@ p {
   color: lightgray;
   font-size: 115%;
 }
+.flex-display {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: center;
 
+}
 button {
   background-color: cornflowerblue;
   color: white;
-  width: 50%;
+  width: 20%;
   padding: 10px 10px;
   display: block;
   height: 39px;
