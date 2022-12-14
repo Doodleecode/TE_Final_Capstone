@@ -24,7 +24,9 @@ public class JdbcContactDao implements ContactDao {
      */
     @Override
     public List<Contact> getAllContacts() {
-        String sql = "SELECT * FROM contact;";
+        String sql = "SELECT * FROM contact c " +
+                " JOIN shelter_user s ON c.contact_id = s.contact_id JOIN application a ON a.contact_id = c.contact_id " +
+                " WHERE status_id = 'A' AND (user_role = 'ROLE_VOLUNTEER' OR user_role = 'ROLE_ADMIN')";
         SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql);
         return createListOfContacts(rowSet);
     }
@@ -39,8 +41,8 @@ public class JdbcContactDao implements ContactDao {
     public List<Contact> getContactsByRole(String role) {
         if (role == null) throw new IllegalArgumentException("Role cannot be null");
         String sql = "SELECT * FROM contact c " +
-                " JOIN user u ON c.contact_id = u.contact_id" +
-                " WHERE role = 'USER_VOLUNTEER' OR role = 'USER_ADMIN";
+                " JOIN user u ON c.contact_id = u.contact_id JOIN application a ON a.contact_id = c.contact_id " +
+                " WHERE status_id = 'A' (role = 'USER_VOLUNTEER' OR role = 'USER_ADMIN')";
         SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql);
         return createListOfContacts(rowSet);
     }

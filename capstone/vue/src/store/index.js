@@ -39,7 +39,7 @@ export default new Vuex.Store({
       if (!state.user.authorities) {
         return false;
       }
-      return state.user.authorities.findIndex(a => a.name === 'ROLE_ADMIN' || a.name === "ROLE_VOLUNTEER" || a.name === "ROLE_USER") != -1;
+      return state.user.authorities.findIndex(a => a.name === "ROLE_USER") != -1;
     }
   },
   mutations: {
