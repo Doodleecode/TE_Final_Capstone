@@ -14,12 +14,14 @@ public class Pet {
     private boolean isGoodWithCats;
     private boolean isAvailable;
     private String imageLink;
+    private Integer userId;
 
     public Pet(){
 
     }
 
-    public Pet(int id, String name, String type, int age, String sex, String breed, String size, boolean isGoodWithKids, boolean isGoodWithDogs, boolean isGoodWithCats, boolean isAvailable, String imageLink) {
+    public Pet(int id, String name, String type, int age, String sex, String breed, String size, boolean isGoodWithKids,
+               boolean isGoodWithDogs, boolean isGoodWithCats, boolean isAvailable, String imageLink, Integer userId) {
         this.id = id;
         this.name = name;
         this.type = type;
@@ -32,6 +34,7 @@ public class Pet {
         this.isGoodWithCats = isGoodWithCats;
         this.isAvailable = isAvailable;
         this.imageLink = imageLink;
+        this.userId = userId;
     }
 
     public int getId() {
@@ -129,5 +132,13 @@ public class Pet {
 
     public void setImageLink(String imageLink) {
         this.imageLink = imageLink;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 }
