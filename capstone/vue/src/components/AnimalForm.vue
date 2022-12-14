@@ -289,5 +289,6 @@ button {
 
 button:hover {
   opacity: 0.8;
+  font-size: 100%;
 }
 </style>

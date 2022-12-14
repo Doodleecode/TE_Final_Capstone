@@ -95,10 +95,9 @@ export default {
 </script>
 
 <style scoped>
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
 #register {
-  display: block;
+  display: flex;
   text-align: center;
   font-family: 'Oxygen', sans-serif;
 }
@@ -158,13 +157,14 @@ button {
 
 button:hover {
   opacity: 0.8;
+  font-size: 100%;
 }
 
 a {
   display: block;
   text-align: center;
   position: relative;
-  margin-top: 22%;
+  margin-top: 3%;
   color: white;
 }
 </style>

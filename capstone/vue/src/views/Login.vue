@@ -143,16 +143,14 @@ button {
 
 button:hover {
   opacity: 0.8;
+  font-size: 100%;
 }
 
 a {
   display: block;
   text-align: center;
   position: relative;
-  /* margin-top: 80px; */
-  /* bottom: 0;
-  right: 360px; */
-  margin-top: 35%;
+  margin-top: 10%;
   color: white;
 }
 </style>
