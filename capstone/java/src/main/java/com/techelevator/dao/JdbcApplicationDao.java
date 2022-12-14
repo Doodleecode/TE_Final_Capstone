@@ -74,10 +74,12 @@ public class JdbcApplicationDao implements ApplicationDao {
         String sql1 = "UPDATE application SET status_id = ? WHERE application_id = ?";
         jdbcTemplate.update(sql1, newStatusId, applicationId);
         String sql2 = "SELECT user_id FROM shelter_user s JOIN contact c ON" +
-                " s.contact_id = c.contact_id JOIN application a ON c.contact_id = a.contact_id";
-        int userId = jdbcTemplate.queryForObject(sql2, int.class);
+                " s.contact_id = c.contact_id JOIN application a ON c.contact_id = a.contact_id WHERE a.application_id = ?";
+        int userId = jdbcTemplate.queryForObject(sql2, int.class, applicationId);
         String sql3 = "UPDATE shelter_user SET user_role = 'ROLE_VOLUNTEER' WHERE user_id = ?";
         jdbcTemplate.update(sql3, userId);
+
+
     }
 
     /**
@@ -87,6 +89,10 @@ public class JdbcApplicationDao implements ApplicationDao {
      */
     @Override
     public void createApp(ApplicationDTO applicationDTO, Principal principal) {
+        String sql0 = "UPDATE application a SET status_id = 'R' FROM contact c " +
+                "JOIN shelter_user s ON c.contact_id = s.contact_id WHERE status_id = 'P' AND username = ? " +
+                "AND a.contact_id = c.contact_id";
+        jdbcTemplate.update(sql0, principal.getName());
         String sql1 = "INSERT INTO contact (contact_name, phone, email, city, state, age, social_link) " +
                 " VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING contact_id;";
         Contact contact = applicationDTO.getContact();
