@@ -38,7 +38,7 @@ export default {
 
 <style scoped>
 #nav > a {
-  border-right: 2px solid black;
+  border-right: 2px solid rgb(65, 64, 64);
   padding: 10px;
 }
 
@@ -57,6 +57,7 @@ export default {
   display: flex;
   align-items: center;
 }
+
 body {
   background-color: rgb(180, 219, 245);
 }

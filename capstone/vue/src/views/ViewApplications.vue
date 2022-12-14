@@ -26,6 +26,10 @@ export default {
 
 h1 {
   text-align: center;
+  font-family: 'Oxygen', sans-serif;
+  color:  rgb(65, 64, 64);
+  text-decoration: underline;
+  text-decoration-color: cornflowerblue;
 }
 
 </style>

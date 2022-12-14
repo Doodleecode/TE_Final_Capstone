@@ -144,12 +144,11 @@ export default {
 
 #animal {
   display: block;
-  text-align: center;
   font-family: "Oxygen", sans-serif;
 }
 
 .good-with {
-  width: 93.5%;
+  width: 103%;
   height: 100%;
   display: flex;
   justify-items: space-between;
@@ -162,27 +161,25 @@ export default {
 }
 form {
   display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
   text-align: left;
   border: 3px solid white;
   position: relative;
   height: 100%;
   width: 100%;
   margin: auto;
-  padding: 60px 60px;
+  padding: 2vw 3vw;
   background-color: rgb(122, 118, 118);
 }
 
 #animal-title {
   text-transform: uppercase;
   font-weight: 150;
-  padding-bottom: 40px;
+  /* padding-bottom: 40px; */
   color: white;
   text-decoration: underline;
   text-decoration-color: cornflowerblue;
   font-family: "Oxygen", sans-serif;
-  /* text-align: center; */
+  text-align: center;
 }
 
 h2 {
@@ -196,7 +193,7 @@ label {
 }
 .form-element input,
 textarea {
-  width: 89%;
+  width: 100%;
   padding: 10px 20px;
   display: block;
   height: 21px;
@@ -209,9 +206,11 @@ textarea {
 }
 
 select {
-  width: 84.5%;
+  display: flex;
+  align-content: center;
+  width: 90%;
   background-color: rgba(255, 255, 255, 0.1);
-  padding: 10px 20px;
+  padding: 10px;
   display: block;
   height: 45px;
   border-radius: 10px;
@@ -230,7 +229,7 @@ option {
 button {
   background-color: cornflowerblue;
   color: white;
-  width: 93%;
+  width: 100%;
   padding: 10px 20px;
   display: block;
   height: 39px;

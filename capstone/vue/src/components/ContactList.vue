@@ -37,5 +37,15 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+
+.contacts {
+  background-color: rgb(122, 118, 118);
+  border: solid white 1px;
+  text-align: center;
+  font-family: 'Oxygen', sans-serif;
+}
+div {
+  color: lightgray
+}
 </style>
