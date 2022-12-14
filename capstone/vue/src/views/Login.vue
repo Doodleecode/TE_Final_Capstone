@@ -1,13 +1,13 @@
 <template>
   <div id="login" class="text-center">
     <form class="form-signin" @submit.prevent="login">
-      <h1 id="page-title" class="h3 mb-3 font-weight-normal">Sign In</h1>
-      <div
+      <h1 style="text-align:center" id="page-title" class="h3 mb-3 font-weight-normal">Sign In</h1>
+      <div 
         class="alert alert-danger"
         role="alert"
         v-if="invalidCredentials"
       >Invalid username and password!</div>
-      <div
+      <div style="text-align:center"
         class="alert alert-success"
         role="alert"
         v-if="this.$route.query.registration"
@@ -88,6 +88,11 @@ export default {
   font-family: 'Oxygen', sans-serif;
 }
 
+.alert {
+  color: white;
+  font-size: 15px;
+  padding-bottom: 15px;
+}
 form {
   display: inline-block;
   margin-left: auto;
@@ -105,7 +110,6 @@ form {
 #page-title {
   text-transform: uppercase;
   font-weight: 150;
-  padding-bottom: 40px;
   color: white;
   text-decoration: underline;
   text-decoration-color: cornflowerblue;

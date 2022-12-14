@@ -51,10 +51,9 @@ export default {
 
 .animal-display {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   justify-items: center;
   align-items: center;
-  /* flex-wrap: wrap;  */
   font-family: "Oxygen", sans-serif;
   color: lightgray;
 }
@@ -77,14 +76,13 @@ h3, p {
 .animal {
   margin: 1%;
   padding: 1.5%;  
-  
   text-align: center;
-  /* max-width: 20%;
-  max-height: 32.36%; */
 }
+
 .loading {
   flex: 3;
 }
+
 .animal a:link,
 .animal a:visited {
   color: rgb(243, 243, 243);
@@ -93,6 +91,5 @@ h3, p {
 
 .loading {
   text-align: center;
-  
 }
 </style>
