@@ -1,28 +1,24 @@
 import axios from 'axios';
 
-const http = axios.create({
-  baseURL: "http://localhost:9000",
-});
-
 export default {
 
   addApplication(application) {
-    return http.post('/submit', application);
+    return axios.post('/submit', application);
   },
 
   getPending() {
-    return http.get('applications/P');
+    return axios.get('applications/P');
   },
 
   putApprove(id) {
-    return http.put('applications/' + id + "/approve")
+    return axios.put('applications/' + id + "/approve")
   },
 
   putDeny(id) {
-    return http.put('applications/' + id + "/deny")
+    return axios.put('applications/' + id + "/deny")
   },
 
   getContact() {
-    return http.get('/volunteers')
+    return axios.get('/volunteers')
   }
 }
