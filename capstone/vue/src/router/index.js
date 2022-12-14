@@ -62,7 +62,7 @@ const router = new Router({
       name: "application",
       component: AddApplication,
       meta: {
-        requiresAuth: false //still trying to center the application 
+        requiresAuth: true
       }
     },
     {
@@ -78,7 +78,7 @@ const router = new Router({
       name: "pets",
       component: AddAnimal,
       meta: {
-        requiresAuth: false //switch to true after CSS
+        requiresAuth: true
       }
     },
     {
@@ -86,7 +86,7 @@ const router = new Router({
       name: "directory",
       component: Directory,
       meta: {
-        requiresAuth: false
+        requiresAuth: true
       }
     }
 

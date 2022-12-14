@@ -1,5 +1,7 @@
 <template>
-  <div id="application">
+<div>
+  <h1 v-if="!isUser">Please sign in before submitting an application</h1>
+  <div id="application" v-else>
     <form v-on:submit.prevent="addApplication">
       <div id="grid">
         <h1 id="info1">Are you interested in supporting Ruff Starts, Purrfect Hearts?</h1>
@@ -168,6 +170,8 @@
       </div>
     </form>
   </div>
+</div>
+  
 </template>
 
 <script>
@@ -234,6 +238,11 @@ export default {
       }
     },
   },
+  computed: {
+    isUser() {
+      return this.$store.getters.isUser;
+    },
+  }
 };
 </script>
 

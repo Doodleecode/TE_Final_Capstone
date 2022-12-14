@@ -22,6 +22,26 @@ export default new Vuex.Store({
     token: currentToken || '',
     user: currentUser || {}
   },
+  getters: {
+    isAdmin(state) {
+      if (!state.user.authorities) {
+        return false;
+      }
+      return state.user.authorities.findIndex(a => a.name === 'ROLE_ADMIN') != -1;
+    },
+    isVolunteer(state) {
+      if (!state.user.authorities) {
+        return false;
+      }
+      return state.user.authorities.findIndex(a => a.name === 'ROLE_ADMIN' || a.name === "ROLE_VOLUNTEER") != -1;
+    },
+    isUser(state) {
+      if (!state.user.authorities) {
+        return false;
+      }
+      return state.user.authorities.findIndex(a => a.name === 'ROLE_ADMIN' || a.name === "ROLE_VOLUNTEER" || a.name === "ROLE_USER") != -1;
+    }
+  },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
       state.token = token;
