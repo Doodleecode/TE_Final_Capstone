@@ -59,9 +59,9 @@ public class JdbcPetDao implements PetDao {
     @Override
     public void updatePet(Pet pet, int id) {
         String sql = "UPDATE pets SET pet_name = ?, pet_type = ?, pet_age = ?, pet_sex = ?, pet_breed = ?, pet_size = ?, " +
-                " is_good_with_kids = ?, is_good_with_dogs = ?, is_good_with_cats = ?, is_available = ?, image_link = ? WHERE pet_id = ?";
+                " is_good_with_kids = ?, is_good_with_dogs = ?, is_good_with_cats = ?, is_available = ?, image_link = ?, user_id = ? WHERE pet_id = ?";
         jdbcTemplate.update(sql, pet.getName(), pet.getType(), pet.getAge(), pet.getSex(), pet.getBreed(), pet.getSize(),
-                pet.isGoodWithKids(), pet.isGoodWithDogs(), pet.isGoodWithCats(), pet.isAvailable(), pet.getImageLink(), id);
+                pet.isGoodWithKids(), pet.isGoodWithDogs(), pet.isGoodWithCats(), pet.isAvailable(), pet.getImageLink(), pet.getUserId(), id);
     }
 
     @Override
@@ -91,6 +91,7 @@ public class JdbcPetDao implements PetDao {
         pet.setGoodWithCats(rs.getBoolean("is_good_with_cats"));
         pet.setAvailable(rs.getBoolean("is_available"));
         pet.setImageLink(rs.getString("image_link"));
+        pet.setUserId(rs.getInt("user_id"));
         return pet;
     }
 }
