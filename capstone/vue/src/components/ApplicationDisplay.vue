@@ -82,6 +82,15 @@ div.application h3 {
 }
 
 button {
-  width: 100%;
+  background-color: cornflowerblue;
+  color: white;
+  width: 50%;
+  padding: 10px 20px;
+  display: block;
+  height: 39px;
+  border-radius: 10px;
+  margin-top: 30px;
+  border: solid 1px white;
+  text-transform: uppercase;
 }
 </style>
