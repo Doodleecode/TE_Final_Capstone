@@ -6,12 +6,12 @@
       </div>
       <div id="nav" class="flex-display">
         <router-link v-bind:to="{ name: 'home' }">Home</router-link>
-        <router-link v-bind:to="{ name: 'application' }">Application</router-link>
-        <router-link v-bind:to="{ name: 'login' }">Login</router-link>
-        <router-link v-bind:to="{ name: 'pendings' }">Pending Applications</router-link>
+        <router-link v-bind:to="{ name: 'login' }" v-if="$store.state.token == ''">Login</router-link>
         <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
-        <router-link v-bind:to="{ name: 'pets' }">Add Pet</router-link>  
-        <router-link v-bind:to="{ name: 'directory' }">Directory</router-link>
+        <router-link v-bind:to="{ name: 'application' }" v-if="isUser">Application</router-link>
+        <router-link v-bind:to="{ name: 'pets' }" v-if="isVolunteer">Add Pet</router-link>  
+        <router-link v-bind:to="{ name: 'directory' }" v-if="isVolunteer">Directory</router-link>
+        <router-link v-bind:to="{ name: 'pendings' }" v-if="isAdmin">Pending Applications</router-link>
       </div>      
     </div>
     <div>
@@ -20,6 +20,21 @@
   </body>
 </template>
 
+<script>
+export default {
+  computed: {
+    isAdmin() {
+      return this.$store.getters.isAdmin;
+    },
+    isVolunteer() {
+      return this.$store.getters.isVolunteer;
+    },
+    isUser() {
+      return this.$store.getters.isUser;
+    }
+  }
+}
+</script>
 
 <style scoped>
 #nav > a {

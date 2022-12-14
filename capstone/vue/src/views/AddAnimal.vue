@@ -1,5 +1,7 @@
 <template>
-  <div id="animal">
+<div>
+  <h1 v-if="!isVolunteer">You don't have access</h1>
+  <div id="animal" v-else>
     <div class="status-message error" v-show="errorMsg !== ''">
       {{ errorMsg }}
     </div>
@@ -66,6 +68,8 @@
       </div>
     </form>
   </div>
+</div>
+  
 </template>
 
 <script>
@@ -91,6 +95,11 @@ export default {
         available: true,
       },
     };
+  },
+  computed: {
+    isVolunteer() {
+      return this.$store.getters.isVolunteer;
+    }
   },
   methods: {
     addAnimal() {
