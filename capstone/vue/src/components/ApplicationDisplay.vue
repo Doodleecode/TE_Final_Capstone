@@ -81,16 +81,25 @@ div.application h3 {
   display: inline-block;
 }
 
+h3 {
+  color: lightgray;
+  font-size: 125%;
+}
+p {
+  color: lightgray;
+  font-size: 115%;
+}
+
 button {
   background-color: cornflowerblue;
   color: white;
   width: 50%;
-  padding: 10px 20px;
+  padding: 10px 10px;
   display: block;
   height: 39px;
   border-radius: 10px;
-  margin-top: 30px;
   border: solid 1px white;
   text-transform: uppercase;
+  font-size: 100%;
 }
 </style>

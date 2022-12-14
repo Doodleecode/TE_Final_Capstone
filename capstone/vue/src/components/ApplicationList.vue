@@ -39,8 +39,8 @@ export default {
 
 div.main {
   margin: 0rem 0;
-
 }
+
 div.main div.well-display {
   display: flex;
   justify-content: space-around;
