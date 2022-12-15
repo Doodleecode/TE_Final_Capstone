@@ -53,6 +53,17 @@ div.main {
   margin: 0rem 0;
 }
 
+h1 {
+  font-family: "oxygen", sans-serif;
+  color: white;
+  font-weight: 150;
+  text-align: center;
+  background-color: rgb(122, 118, 118);
+  margin-top: 0;
+  border: solid white 3px;
+  border-top: 0;
+}
+
 div.main div.well-display {
   display: flex;
   justify-content: space-around;
@@ -74,5 +85,19 @@ div.main div.well-display div.well span.amount {
 
 div.main div.well-display div.well {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 1024px) {
+  h1 {
+    width: 75%;
+    font-size: 75%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  h1 {
+    width: 50%;
+    font-size: 50%;
+  }
 }
 </style>

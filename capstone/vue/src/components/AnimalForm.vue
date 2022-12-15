@@ -14,7 +14,7 @@
               <option value="dog">Dog</option>
               <option value="cat">Cat</option>
             </select>
-          </div>
+          </div><br/><br/>
         <div class="form-element">
           <label for="name">Name:</label>
           <input type="text" v-model="pet.name" required/>
@@ -217,7 +217,6 @@ export default {
   justify-items: space-between;
   align-items: baseline;
 }
-
 .good-with > div {
   flex: 1;
   
@@ -271,7 +270,7 @@ textarea {
 select {
   display: flex;
   align-content: center;
-  width: 90%;
+  width: 100%;
   background-color: rgba(255, 255, 255, 0.1);
   padding: 10px;
   display: block;
@@ -303,6 +302,9 @@ button {
   opacity: 0.8;
 }
 
+.good-with{
+  width: 100%;
+}
 button:hover {
   opacity: 100;
   font-size: 100%;

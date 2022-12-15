@@ -71,6 +71,7 @@ export default {
   color: white;
   font-size: 75px;
   font-weight: 150;
+  text-transform: uppercase;
 }
 .animal-filter.All {
   background-image: url("../assets/cat_and_dog.png");
