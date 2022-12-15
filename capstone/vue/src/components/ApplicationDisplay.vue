@@ -35,13 +35,13 @@ export default {
   methods: {
     onApprove() {
       applicationService.putApprove(this.application.application.id).then(() => {
-        this.isHidden = true;
+        this.$parent.refreshApplications();
     });
       
     },
     onDeny() {
       applicationService.putDeny(this.application.application.id).then(() => {
-        this.isHidden = true;
+        this.$parent.refreshApplications();
     });
     }
   }

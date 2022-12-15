@@ -38,6 +38,15 @@ export default {
       this.isLoading = false;
     });
   },
+  methods: {
+    refreshApplications() {
+      applicationService.getPending().then((response) => {
+      this.applications = response.data;
+      this.isLoading = false;
+    });
+    }
+    
+  }
 };
 </script>
 
