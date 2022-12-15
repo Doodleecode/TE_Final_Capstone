@@ -76,10 +76,10 @@ public class JdbcApplicationDao implements ApplicationDao {
         String sql2 = "SELECT user_id FROM shelter_user s JOIN contact c ON" +
                 " s.contact_id = c.contact_id JOIN application a ON c.contact_id = a.contact_id WHERE a.application_id = ?";
         int userId = jdbcTemplate.queryForObject(sql2, int.class, applicationId);
-        String sql3 = "UPDATE shelter_user SET user_role = 'ROLE_VOLUNTEER' WHERE user_id = ?";
-        jdbcTemplate.update(sql3, userId);
-
-
+        if (newStatusId.equals("A")) {
+            String sql3 = "UPDATE shelter_user SET user_role = 'ROLE_VOLUNTEER' WHERE user_id = ?";
+            jdbcTemplate.update(sql3, userId);
+        }
     }
 
     /**
