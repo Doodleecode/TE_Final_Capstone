@@ -33,10 +33,7 @@ export default {
     }
   },
   created() {
-    applicationService.getPending().then((response) => {
-      this.applications = response.data;
-      this.isLoading = false;
-    });
+    this.refreshApplications();
   },
   methods: {
     refreshApplications() {
