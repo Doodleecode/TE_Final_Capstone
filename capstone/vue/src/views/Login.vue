@@ -106,7 +106,7 @@ form {
   height: 560px;
   width: 400px;
   margin: auto;
-  padding: 60px 60px;
+  padding: 30px 60px;
   background-color: rgb(122, 118, 118);
 }
 

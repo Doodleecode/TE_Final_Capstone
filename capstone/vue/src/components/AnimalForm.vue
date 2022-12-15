@@ -256,7 +256,7 @@ label {
 .form-element input,
 textarea {
   width: 100%;
-  padding: 10px 20px;
+  padding: 22px 20px;
   display: block;
   height: 21px;
   border-radius: 10px;
