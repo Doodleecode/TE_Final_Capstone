@@ -51,6 +51,7 @@ img {
   max-height: 100%;
   max-width: 100%;
   object-fit: scale-down;
+  padding-bottom: 1vh;
 }
 .animal-name {
   text-transform: capitalize;

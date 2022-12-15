@@ -34,4 +34,8 @@ export default {
 h3 {
   color: white;
 }
+
+.info {
+  text-decoration: none;
+}
 </style>

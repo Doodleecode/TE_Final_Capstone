@@ -102,10 +102,10 @@ export default {
 
 @media only screen and (max-width: 550px) {
  .flex-display {
-    font-size: 5%;
+    font-size: 50%;
   }
   #title {
-    font-size: 70%;
+    font-size: 60%;
     padding-top: 3%;
     padding-left: 3%;
   }
