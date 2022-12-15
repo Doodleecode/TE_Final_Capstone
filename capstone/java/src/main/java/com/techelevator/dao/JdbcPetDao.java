@@ -37,7 +37,7 @@ public class JdbcPetDao implements PetDao {
     @Override
     public List<Pet> getAllPets() {
         List<Pet> allPets = new ArrayList<>();
-        String sql = "SELECT * FROM pets";
+        String sql = "SELECT * FROM pets ORDER BY time_added";
 
         SqlRowSet rs = jdbcTemplate.queryForRowSet(sql);
 

@@ -79,6 +79,7 @@ CREATE TABLE pets (
 	is_available BOOLEAN,
 	image_link varchar(200),
 	user_id int NULL,
+	time_added TIMESTAMP DEFAULT now(),
 	--user_id int REFERENCES shelter_user (user_id),
 	CONSTRAINT FK_user_id FOREIGN KEY(user_id) REFERENCES shelter_user(user_id)	
 );
@@ -90,16 +91,16 @@ INSERT INTO shelter_user(username, password_hash, user_role) VALUES ('admin', '$
 INSERT INTO contact (contact_name, phone, email, city, state, age, social_link)
 VALUES ('Kevin', '1234567890', 'kevinhsu16739@gmail.com', 'Columbus', 'OH', 23, '123@link');
 
-INSERT INTO pets (pet_name, pet_type, pet_age, pet_sex, pet_breed, pet_size, is_good_with_kids, is_good_with_dogs, is_good_with_cats, is_available, image_link, user_id)
-VALUES ('Luna','dog',5, 'female', 'domestic long hair', 'L', true, false, true, true, 'https://undark.org/wp-content/uploads/2022/09/dog.jpg', null),
-('frank','cat',3, 'male', 'domestic short hair', 'M', true, false, true, true, 'https://images.unsplash.com/photo-1615789591457-74a63395c990', null),
-('belle','dog',4, 'female', 'pug', 'S', true, false, false, true, 'https://people.com/thmb/5uLym456xzuJ5MwbPIdTJiyGoSE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(904x0:906x2)/pug-1-0d4c0f988e3d421ca4954917b1450664.jpg', null),
-('benny','dog',14, 'male', 'domestic long hair', 'XXL', true, false, true, true, 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/golden-retriever-dog-royalty-free-image-505534037-1565105327.jpg', null),
-('tiger','cat',3, 'female', 'domestic short hair', 'M', true, false, true, true, 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/RedCat_8727.jpg/1200px-RedCat_8727.jpg', null),
-('Deer','dog',10, 'female', 'domestic short hair', 'XXL', true, false, true, true, 'https://media.cnn.com/api/v1/images/stellar/prod/201030094143-stock-rhodesian-ridgeback.jpg?q=w_2187,h_1458,x_0,y_0,c_fill', null),
-('Doodle','cat',2, 'female', 'domestic short hair', 'XXL', true, false, true, true, 'https://images.unsplash.com/photo-1670471198259-137eacb1a430?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2127&q=80', null),
-('Bear','dog',1, 'male', 'domestic short hair', 'XXL', true, false, false, true, 'https://images.unsplash.com/photo-1587402092301-725e37c70fd8', null),
-('Hawk','dog',14, 'male', 'mixed', 'XXL', true, false, true, true, 'https://www.purina.co.uk/sites/default/files/2020-11/Working%20Dogs%20Everything%20You%20Need%20to%20KnowTEASER.jpeg', null),
-('Shark','cat',1, 'female', 'domestic short hair', 'XXL', true, false, true, true, 'https://media.npr.org/assets/img/2021/08/11/gettyimages-1279899488_wide-f3860ceb0ef19643c335cb34df3fa1de166e2761-s1100-c50.jpg', null);
+INSERT INTO pets (pet_name, pet_type, pet_age, pet_sex, pet_breed, pet_size, is_good_with_kids, is_good_with_dogs, is_good_with_cats, is_available, image_link, user_id, time_added)
+VALUES ('Luna','dog',5, 'female', 'domestic long hair', 'L', true, false, true, true, 'https://undark.org/wp-content/uploads/2022/09/dog.jpg', null, now() - interval '1 hour'),
+('frank','cat',3, 'male', 'domestic short hair', 'M', true, false, true, true, 'https://images.unsplash.com/photo-1615789591457-74a63395c990', null, now() - interval '2 hour'),
+('belle','dog',4, 'female', 'pug', 'S', true, false, false, true, 'https://people.com/thmb/5uLym456xzuJ5MwbPIdTJiyGoSE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(904x0:906x2)/pug-1-0d4c0f988e3d421ca4954917b1450664.jpg', null, now() - interval '3 hour'),
+('benny','dog',14, 'male', 'domestic long hair', 'XXL', true, false, true, true, 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/golden-retriever-dog-royalty-free-image-505534037-1565105327.jpg', null, now() - interval '4 hour'),
+('tiger','cat',3, 'female', 'domestic short hair', 'M', true, false, true, true, 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/RedCat_8727.jpg/1200px-RedCat_8727.jpg', null, now() - interval '5 hour'),
+('Deer','dog',10, 'female', 'domestic short hair', 'XXL', true, false, true, true, 'https://media.cnn.com/api/v1/images/stellar/prod/201030094143-stock-rhodesian-ridgeback.jpg?q=w_2187,h_1458,x_0,y_0,c_fill', null, now() - interval '6 hour'),
+('Doodle','cat',2, 'female', 'domestic short hair', 'XXL', true, false, true, true, 'https://images.unsplash.com/photo-1670471198259-137eacb1a430?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2127&q=80', null, now() - interval '7 hour'),
+('Bear','dog',1, 'male', 'domestic short hair', 'XXL', true, false, false, true, 'https://images.unsplash.com/photo-1587402092301-725e37c70fd8', null, now() - interval '8 hour'),
+('Hawk','dog',14, 'male', 'mixed', 'XXL', true, false, true, true, 'https://www.purina.co.uk/sites/default/files/2020-11/Working%20Dogs%20Everything%20You%20Need%20to%20KnowTEASER.jpeg', null, now() - interval '9 hour'),
+('Shark','cat',1, 'female', 'domestic short hair', 'XXL', true, false, true, true, 'https://media.npr.org/assets/img/2021/08/11/gettyimages-1279899488_wide-f3860ceb0ef19643c335cb34df3fa1de166e2761-s1100-c50.jpg', null, now() - interval '10 hour');
 
 COMMIT;
