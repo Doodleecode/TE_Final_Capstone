@@ -86,14 +86,14 @@ div.main1 div.well-display div.well {
 
 @media only screen and (max-width: 1024px) {
   h1 {
-    width: 75%;
+    /* width: 75%; */
     font-size: 75%;
   }
 }
 
 @media only screen and (max-width: 550px) {
   h1 {
-    width: 50%;
+    /* width: 50%; */
     font-size: 50%;
   }
 }

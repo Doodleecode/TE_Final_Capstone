@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="contact">
     <div class="contacts">
       <div class="loading" v-if="isLoading">
         <img src="../assets/cat_loading.gif" />
@@ -44,7 +44,7 @@ export default {
   text-align: center;
   font-family: 'Oxygen', sans-serif;
 }
-div {
+.contact {
   color: lightgray
 }
 </style>

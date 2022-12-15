@@ -90,6 +90,8 @@ a:hover {
 
 #nav{
   font-size: 30px;
+  position: absolute;
+  right: 0;
 }
 
 

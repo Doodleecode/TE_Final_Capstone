@@ -47,14 +47,14 @@ h1 {
  
   h1 {
     font-size: 75%;
-    width: 75%;
+    /* width: 75%; */
   }
 }
 
 @media only screen and (max-width: 550px) {
   h1 {
     font-size: 50%;
-    width: 50%;
+    /* width: 50%; */
   }
 }
 
