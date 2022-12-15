@@ -37,19 +37,21 @@ div.main {
   font-family: 'Oxygen', sans-serif;
   color:  white;
   border: solid white 3px;
-  
+  padding-top: 10px;
 }
 
 @media only screen and (max-width: 1024px) {
   h1 {
-    font-size: 75%;
+    font-size: 90%;
   }
+
 }
 
 @media only screen and (max-width: 550px) {
   h1 {
-    font-size: 50%;
+    font-size: 90%;
   }
+
 }
 
 </style>

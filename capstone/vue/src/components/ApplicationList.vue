@@ -59,6 +59,7 @@ h1 {
   margin-top: 0;
   border: solid white 3px;
   border-top: 0;
+  padding-bottom: 15px;
 }
 
 div.main1 div.well-display {

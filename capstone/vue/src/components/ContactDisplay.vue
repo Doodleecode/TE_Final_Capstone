@@ -33,9 +33,23 @@ export default {
 
 h3 {
   color: white;
+  font-weight: 150;
 }
 
 .info {
   text-decoration: none;
+}
+@media only screen and (max-width: 1024px) {
+  .centered {
+    font-size: 75%;
+  }
+
+}
+
+@media only screen and (max-width: 550px) {
+  .centered {
+    font-size: 50%;
+  }
+
 }
 </style>
