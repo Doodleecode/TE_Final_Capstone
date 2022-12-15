@@ -26,7 +26,8 @@ export default {
 h1 {
    text-transform: uppercase;
    font-weight: 150;
-   
+   text-decoration: underline;
+   text-decoration-color: cornflowerblue;
 }
 
 div.main {
@@ -35,9 +36,8 @@ div.main {
   text-align: center;
   font-family: 'Oxygen', sans-serif;
   color:  white;
-  text-decoration: underline;
-  text-decoration-color: cornflowerblue;
   padding-top: 20px;
+  border: solid white 3px;
   
 }
 

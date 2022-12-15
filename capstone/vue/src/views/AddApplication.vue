@@ -390,8 +390,8 @@ h3 {
 
 .form-element input,
 textarea {
-  width: 89%;
-  padding: 10px 20px;
+  width: 90%;
+  padding: 20px 20px;
   display: block;
   height: 21px;
   border-radius: 10px;
@@ -405,7 +405,7 @@ textarea {
 select {
   width: 90%;
   background-color: rgba(255, 255, 255, 0.1);
-  padding: 10px 20px;
+  padding: 20px 20px;
   display: block;
   height: 45px;
   border-radius: 10px;

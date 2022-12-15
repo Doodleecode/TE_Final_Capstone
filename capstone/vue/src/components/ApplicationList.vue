@@ -1,5 +1,5 @@
 <template>
-<div class="main">
+<div class="main1">
   <div class="applications">
     <div class="loading" v-if="isLoading">
         <img src="../assets/cat_loading.gif" />
@@ -49,9 +49,6 @@ export default {
 
 <style scoped>
 
-div.main {
-  margin: 0rem 0;
-}
 
 h1 {
   font-family: "oxygen", sans-serif;
@@ -64,12 +61,12 @@ h1 {
   border-top: 0;
 }
 
-div.main div.well-display {
+div.main1 div.well-display {
   display: flex;
   justify-content: space-around;
 }
 
-div.main div.well-display div.well {
+div.main1 div.well-display div.well {
   display: inline-block;
   width: 15%;
   border: 3px white solid;
@@ -77,13 +74,13 @@ div.main div.well-display div.well {
   margin: 0.25rem;
 }
 
-div.main div.well-display div.well span.amount {
+div.main1 div.well-display div.well span.amount {
   color: rgb(65, 64, 64);
   display: block;
   font-size: 2.5rem;
 }
 
-div.main div.well-display div.well {
+div.main1 div.well-display div.well {
   cursor: pointer;
 }
 
