@@ -1,16 +1,14 @@
 <template>
   <div>
-
+    <div class="loading" v-if="isLoading">
+      <img src="../assets/cat_loading.gif" />
+    </div>
     <div class="animal-display">
-      <div class="loading" v-if="isLoading">
-        <img src="../assets/cat_loading.gif" />
-      </div>
       <animal-display
         class="animal"
         v-for="animal in filteredAnimals"
         v-bind:key="animal.id"
         :animal="animal"
-        v-else
       />
     </div>
   </div>
@@ -46,6 +44,12 @@ export default {
 };
 </script>
 
+<style>
+.loading {
+  text-align: center;
+}
+</style>
+
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
 
@@ -68,19 +72,16 @@ h1 {
   text-decoration-color: cornflowerblue;
   color: rgb(77, 76, 76);
 }
-h3, p {
+h3,
+p {
   font-family: "Oxygen", sans-serif;
   color: lightgray;
 }
 
 .animal {
   margin: 1%;
-  padding: 1.5%;  
+  padding: 1.5%;
   text-align: center;
-}
-
-.loading {
-  flex: 3;
 }
 
 .animal a:link,
@@ -89,24 +90,17 @@ h3, p {
   text-decoration: none;
 }
 
-.loading {
-  text-align: center;
-}
-
-
-
 @media only screen and (max-width: 1024px) {
- .animal-display {
+  .animal-display {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
- }
+  }
 }
 
 @media only screen and (max-width: 550px) {
   .animal-display {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
- }
+  }
 }
-
 </style>
