@@ -62,6 +62,17 @@
           <label for="imageLink">Image Link:</label>
           <input type="text" v-model="pet.imageLink" required/>
         </div>
+        <div class="form-element">
+            <label for="availability" class="required">Availability:</label>
+            <select id="availability" v-model="pet.available" required>
+              <option :value="true">✅</option>
+              <option :value="false">❌</option>
+            </select>
+          </div>
+          <div class="form-element">
+          <label for="userID">UserNumber associated with adoption:</label>
+          <input type="number" v-model="pet.userID"/>
+        </div>
       </div>
       <div id="submit" class="form-element">
         <button class="btn btn-submit">Submit</button>
@@ -99,6 +110,7 @@ export default {
         goodWithCats: null,
         goodWithKids: null,
         available: true,
+        userID: null,
       },
     };
   },
@@ -139,7 +151,7 @@ export default {
           //EDIT
         newPet.id = this.petID;
         animalService.editAnimal(newPet).then((response) => {
-            if (response.status === 201) {
+            if (response.status === 200) {
                 this.goBack();
             }
         })

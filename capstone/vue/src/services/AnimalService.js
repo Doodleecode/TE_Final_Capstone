@@ -16,5 +16,6 @@ export default {
 
   editAnimal(pet) {
     return axios.put(`/pets/${pet.id}`, pet);
-  }
+  },
+
 }

@@ -1,10 +1,10 @@
 <template>
-  <div class="flex-display">
+  <div class="flex-display" v-if="animal.available">
     <h3 class='animal-name'>{{ animal.name }}</h3>
     <p>{{ animal.age }}</p>
     <div class="animal-image"><img :src="animal.imageLink" /></div>
     <router-link class="btn updateAnimal" :to="{ name: 'Edit', params: {petID: animal.id} }">
-    <button v-if="isAdmin">Update</button>
+    <button v-if="isVolunteer">Update</button>
     </router-link>
   </div>
 </template>
@@ -13,8 +13,8 @@
 export default {
   props: ["animal"],
   computed: {
-    isAdmin() {
-      return this.$store.getters.isAdmin;
+    isVolunteer() {
+      return this.$store.getters.isVolunteer;
     },
   }
 };

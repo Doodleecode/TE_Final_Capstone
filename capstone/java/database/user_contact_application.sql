@@ -91,15 +91,15 @@ INSERT INTO contact (contact_name, phone, email, city, state, age, social_link)
 VALUES ('Kevin', '1234567890', 'kevinhsu16739@gmail.com', 'Columbus', 'OH', 23, '123@link');
 
 INSERT INTO pets (pet_name, pet_type, pet_age, pet_sex, pet_breed, pet_size, is_good_with_kids, is_good_with_dogs, is_good_with_cats, is_available, image_link, user_id)
-Values ('max','dog',10, 'female', 'domestic short hair', 'XXL', true, false, true, false, 'https://images.unsplash.com/photo-1587402092301-725e37c70fd8', null),
+Values ('max','dog',10, 'female', 'domestic short hair', 'XXL', true, false, true, true, 'https://images.unsplash.com/photo-1587402092301-725e37c70fd8', null),
 ('frank','cat',3, 'female', 'domestic short hair', 'XXL', true, false, true, true, 'https://images.unsplash.com/photo-1615789591457-74a63395c990', null),
-('belle','dog',4, 'female', 'domestic short hair', 'XXL', true, false, false, false, 'https://images.unsplash.com/photo-1587402092301-725e37c70fd8', null),
+('belle','dog',4, 'female', 'domestic short hair', 'XXL', true, false, false, true, 'https://images.unsplash.com/photo-1587402092301-725e37c70fd8', null),
 ('benny','dog',14, 'female', 'domestic short hair', 'XXL', true, false, true, true, 'https://images.unsplash.com/photo-1587402092301-725e37c70fd8', null),
-('tiger','cat',1, 'female', 'domestic short hair', 'XXL', true, false, true, false, 'https://images.unsplash.com/photo-1615789591457-74a63395c990', null),
+('tiger','cat',1, 'female', 'domestic short hair', 'XXL', true, false, true, true, 'https://images.unsplash.com/photo-1615789591457-74a63395c990', null),
 ('Deer','dog',10, 'female', 'domestic short hair', 'XXL', true, false, true, true, 'https://images.unsplash.com/photo-1587402092301-725e37c70fd8', null),
-('Doodle','cat',2, 'female', 'domestic short hair', 'XXL', true, false, true, false, 'https://images.unsplash.com/photo-1670471198259-137eacb1a430?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2127&q=80', null),
+('Doodle','cat',2, 'female', 'domestic short hair', 'XXL', true, false, true, true, 'https://images.unsplash.com/photo-1670471198259-137eacb1a430?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2127&q=80', null),
 ('Bear','dog',4, 'female', 'domestic short hair', 'XXL', true, false, false, true, 'https://images.unsplash.com/photo-1587402092301-725e37c70fd8', null),
-('Hawk','dog',14, 'male', 'mixed', 'XXL', true, false, true, false, 'https://images.unsplash.com/photo-1587402092301-725e37c70fd8', null),
+('Hawk','dog',14, 'male', 'mixed', 'XXL', true, false, true, true, 'https://images.unsplash.com/photo-1587402092301-725e37c70fd8', null),
 ('Shark','cat',1, 'female', 'domestic short hair', 'XXL', true, false, true, true, 'https://images.unsplash.com/photo-1615789591457-74a63395c990', null);
 
 COMMIT;
