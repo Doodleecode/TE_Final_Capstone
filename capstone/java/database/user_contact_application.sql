@@ -83,13 +83,15 @@ CREATE TABLE pets (
 	--user_id int REFERENCES shelter_user (user_id),
 	CONSTRAINT FK_user_id FOREIGN KEY(user_id) REFERENCES shelter_user(user_id)	
 );
-
 INSERT INTO status(status_id, status_name) VALUES ('A', 'Approved'), ('R', 'Rejected'), ('P', 'Pending');
 
-INSERT INTO shelter_user(username, password_hash, user_role) VALUES ('admin', '$2a$10$B78o/ehFJ3NcDncPzZ7BwOiCD6MRQtyrP6UzWQ.f53JVLAMbCgxeG', 'ROLE_ADMIN');
+INSERT INTO contact (contact_name, phone, email, city, state, age, social_link) VALUES 
+('Tech Elevator Admin', '9886063203', 'hello@techelevator.com', 'Cincinnati', 'OH', '22', 'https://www.linkedin.com/school/tech-elevator/mycompany/');
+INSERT INTO application (contact_id, status_id, weekly_hours, is_day, preferred_animal, reason) VALUES (4001, 'A', 168, true, 'Dog', 'Great animals, great people');
+INSERT INTO shelter_user(username, password_hash, user_role, contact_id) VALUES ('admin', '$2a$10$B78o/ehFJ3NcDncPzZ7BwOiCD6MRQtyrP6UzWQ.f53JVLAMbCgxeG', 'ROLE_ADMIN', 4001);
 
-INSERT INTO contact (contact_name, phone, email, city, state, age, social_link)
-VALUES ('Kevin', '1234567890', 'kevinhsu16739@gmail.com', 'Columbus', 'OH', 23, '123@link');
+-- INSERT INTO contact (contact_name, phone, email, city, state, age, social_link)
+-- VALUES ('Kevin', '1234567890', 'kevinhsu16739@gmail.com', 'Columbus', 'OH', 23, '123@link');
 
 INSERT INTO pets (pet_name, pet_type, pet_age, pet_sex, pet_breed, pet_size, is_good_with_kids, is_good_with_dogs, is_good_with_cats, is_available, image_link, user_id, time_added)
 VALUES ('Luna','dog',5, 'female', 'domestic long hair', 'L', true, false, true, true, 'https://undark.org/wp-content/uploads/2022/09/dog.jpg', null, now() - interval '1 hour'),
