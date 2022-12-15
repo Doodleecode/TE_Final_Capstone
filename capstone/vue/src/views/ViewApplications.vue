@@ -41,4 +41,17 @@ h1 {
   border-bottom: none;
 }
 
+
+@media only screen and (max-width: 1024px) {
+  h1 {
+    font-size: 75%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  h1 {
+    font-size: 50%;
+  }
+}
+
 </style>

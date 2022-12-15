@@ -83,5 +83,32 @@ export default {
   background-image: url("../assets/cat.png");
 }
 
+@media only screen and (max-width: 1024px) {
+ .flex-display {
+    font-size: 50%;
+  }
+  #title {
+    font-size: 90%;
+    padding-top: 5%;
+  }
 
+  .animal-filter {
+    padding-left: 3%;
+
+  }
+}
+
+@media only screen and (max-width: 550px) {
+ .flex-display {
+    font-size: 5%;
+  }
+  #title {
+    font-size: 70%;
+    padding-top: 3%;
+    padding-left: 3%;
+  }
+  .animal-filter {
+    padding-left: 3%;
+  }
+}
 </style>

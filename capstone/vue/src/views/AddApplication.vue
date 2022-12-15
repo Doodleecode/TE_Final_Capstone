@@ -439,4 +439,23 @@ button:hover {
   font-size: 100%;
 }
 
+@media only screen and (max-width: 1024px) {
+  form {
+    padding-left: 3%;
+    padding-right: 1%;
+  }
+  h1 {
+    margin-bottom: -1%;
+  }
+}
+@media only screen and (max-width: 550px) {
+  form {
+    padding-left: 3%;
+    padding-right: 1%;
+  }
+  h1 {
+    margin-bottom: -1%;
+  }
+}
+
 </style>

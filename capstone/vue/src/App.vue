@@ -74,8 +74,7 @@ body {
   width: 220px;
   margin-left: -20%; 
   margin-top: -15%;
-  /* margin-bottom: 100%; */
-  /* height: 200px; */
+ 
 }
 
 a {
@@ -91,6 +90,43 @@ a:hover {
 
 #nav{
   font-size: 30px;
+}
+
+
+@media only screen and (max-width: 1024px) {
+  #app {
+    height: 75%;
+  }
+  .logo {
+    width: 50%;
+    height: 50%;
+    margin-left: -10%;
+    margin-top: -5%;
+  }
+  a:hover {
+    font-size: 125%;
+  }
+  #nav{
+    font-size: 75%;
+  }
+ 
+}
+
+@media only screen and (max-width: 550px) {
+  #app {
+    height: 50%;
+  }
+  .logo {
+    width: 25%;
+    margin-left: -5%;
+    margin-top: -5%;
+  }
+  a:hover {
+    font-size: 125%;
+  }
+  #nav{
+    font-size: 55%;
+  }
 }
 
 </style>
