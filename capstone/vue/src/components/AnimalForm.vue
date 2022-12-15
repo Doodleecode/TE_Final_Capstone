@@ -61,16 +61,16 @@
         <div class="form-element">
           <label for="imageLink">Image Link:</label>
           <input type="text" v-model="pet.imageLink" required/>
-        </div>
+        </div><br/><br/>
         <div class="form-element">
             <label for="availability" class="required">Availability:</label>
             <select id="availability" v-model="pet.available" required>
-              <option :value="true">✅</option>
-              <option :value="false">❌</option>
+              <option :value="true">Available for Adoption</option>
+              <option :value="false">Pet Has Been Adopted</option>
             </select>
-          </div>
+          </div><br/><br/>
           <div class="form-element">
-          <label for="userID">UserNumber associated with adoption:</label>
+          <label for="userID">User Number associated with adoption:</label>
           <input type="number" v-model="pet.userID"/>
         </div>
       </div>
@@ -302,5 +302,10 @@ button {
 button:hover {
   opacity: 0.8;
   font-size: 100%;
+}
+
+#availability {
+  width: 100%;
+  font-size: 20px;
 }
 </style>
