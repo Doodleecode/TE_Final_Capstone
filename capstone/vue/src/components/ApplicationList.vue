@@ -4,6 +4,7 @@
     <div class="loading" v-if="isLoading">
         <img src="../assets/cat_loading.gif" />
       </div>
+      <h1 v-if="pendingApps">No applications to review</h1>
     <application-display v-for="application in applications" v-bind:key="application.application.id"
         :application="application" v-else/>
   </div>
@@ -24,6 +25,11 @@ export default {
     return {
       applications: [],
       isLoading: true,
+    }
+  },
+  computed: {
+    pendingApps() {
+      return this.applications.length === 0;
     }
   },
   created() {
