@@ -24,9 +24,7 @@ public class JdbcContactDao implements ContactDao {
      */
     @Override
     public List<Contact> getAllContacts() {
-        String sql = "SELECT * FROM contact c " +
-                " JOIN shelter_user s ON c.contact_id = s.contact_id JOIN application a ON a.contact_id = c.contact_id " +
-                " WHERE status_id = 'A' AND (user_role = 'ROLE_VOLUNTEER' OR user_role = 'ROLE_ADMIN')";
+        String sql = "SELECT * FROM contact c JOIN shelter_user s ON c.contact_id = s.contact_id WHERE user_role = 'ROLE_VOLUNTEER' OR user_role = 'ROLE_ADMIN'";
         SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql);
         return createListOfContacts(rowSet);
     }
