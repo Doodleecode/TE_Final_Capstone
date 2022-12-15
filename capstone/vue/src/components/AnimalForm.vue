@@ -9,12 +9,15 @@
       <h1 id="animal-title">Add/update an Adoptable Pet</h1>
       <div>
         <div class="form-element">
+            <label for="Type" class="required">Type:</label>
+            <select id="Type" v-model="pet.type" required>
+              <option value="dog">Dog</option>
+              <option value="cat">Cat</option>
+            </select>
+          </div>
+        <div class="form-element">
           <label for="name">Name:</label>
           <input type="text" v-model="pet.name" required/>
-        </div><br><br>
-        <div class="form-element">
-          <label for="Type">Type:</label>
-          <input type="text" v-model="pet.type" required/>
         </div><br><br>
         <div class="form-element">
           <label for="age">Age:</label>
