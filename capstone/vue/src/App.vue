@@ -2,7 +2,10 @@
   <body>
     <div id="app">
       <div>
-        <img class="logo" src="./assets/RSPH.png" />
+        <router-link v-bind:to="{ name: 'home' }">
+          <img class="logo" src="./assets/RSPH.png" />
+        </router-link>
+        
       </div>
       <div id="nav" class="flex-display">
         <router-link v-bind:to="{ name: 'home' }">Home</router-link>
