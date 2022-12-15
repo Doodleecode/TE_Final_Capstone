@@ -432,10 +432,11 @@ button {
   margin-top: 30px;
   border: none;
   text-transform: uppercase;
+  opacity: 0.8;
 }
 
 button:hover {
-  opacity: 0.8;
+  opacity: 100;
   font-size: 100%;
 }
 

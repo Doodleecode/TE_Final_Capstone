@@ -297,15 +297,28 @@ button {
   margin-top: 30px;
   border: none;
   text-transform: uppercase;
+  opacity: 0.8;
 }
 
 button:hover {
-  opacity: 0.8;
+  opacity: 100;
   font-size: 100%;
 }
 
 #availability {
   width: 100%;
   font-size: 20px;
+}
+
+@media only screen and (max-width: 1024px) {
+ .well {
+   width: 75%;
+ }
+}
+
+@media only screen and (max-width: 550px) {
+ .well {
+   width: 75%;
+ }
 }
 </style>

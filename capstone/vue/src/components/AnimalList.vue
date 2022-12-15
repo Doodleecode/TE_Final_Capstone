@@ -92,4 +92,21 @@ h3, p {
 .loading {
   text-align: center;
 }
+
+
+
+@media only screen and (max-width: 1024px) {
+ .animal-display {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+ }
+}
+
+@media only screen and (max-width: 550px) {
+  .animal-display {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+ }
+}
+
 </style>

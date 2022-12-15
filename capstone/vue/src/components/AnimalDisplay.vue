@@ -29,14 +29,19 @@ export default {
   justify-content: center;
   background-color: rgb(122, 118, 118);
   border: 3px solid white;
-  width: 10vw;
+  width: 18vw;
   flex-grow: 1;
+  font-size: 20px;
+}
+
+h3 {
+  font-weight: 250;
 }
 
 .flex-display:hover {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  box-shadow: 0 0 20px black;
+  box-shadow: 0 0 40px rgb(21, 5, 247);
 }
 .animal-image {
   height: 10rem;
@@ -62,7 +67,31 @@ button {
   border: solid 1px white;
   text-transform: uppercase;
   font-size: 100%;
+  opacity: 0.8;
 }
 
+button:hover {
+  opacity: 100;
+  font-size: 100%;
+}
+
+
+@media only screen and (max-width: 1024px) {
+ .flex-display {
+   width: 85%;
+ }
+ button {
+   font-size: 75%;
+ }
+}
+
+@media only screen and (max-width: 550px) {
+ .flex-display {
+   width: 85%;
+ }
+ button{
+   font-size: 50%;
+ }
+}
 
 </style>

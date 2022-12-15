@@ -1,18 +1,18 @@
 <template>
   <div class="application" v-bind:key="application.application.id" v-if="!isHidden">
     <div class="centered">
-      <h3>{{ application.contact.contactName }}, {{ application.contact.age }}</h3>
+      <h3 style="text-align:center">{{ application.contact.contactName }}, {{ application.contact.age }}</h3>
     </div>
     <div class="info">
-      <p>Hours: {{ application.application.weeklyHours }}</p>
+      <p style="text-align:center">Hours: {{ application.application.weeklyHours }}</p>
       <div>
-        <p v-if="application.application.isDay">Time: Day</p>
-        <p v-else>Time: Night</p>
+        <p style="text-align:center" v-if="application.application.isDay">Time: Day</p>
+        <p style="text-align:center" v-else>Time: Night</p>
       </div>
-      <p>Animal: {{ application.application.preferredAnimal }}</p>
+      <p style="text-align:center">Animal: {{ application.application.preferredAnimal }}</p>
     </div>
     <div class="centered">
-      <p>{{ application.application.reason }}</p>
+      <p style="text-align:center">{{ application.application.reason }}</p>
     </div>
     
     <div class="flex-display">
@@ -53,13 +53,17 @@ export default {
 
 div {
   background-color: rgb(122, 118, 118);
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 div.info {
   width: 100%;
   display: flex;
-  /* align-content: space-between; */
 }
 div.info > * {
+  display: flex;
+  justify-content: center;
   flex: 1;
   text-align: center;
 }
@@ -85,6 +89,7 @@ div.application h3 {
 h3 {
   color: lightgray;
   font-size: 125%;
+  text-align: center;
 }
 p {
   color: lightgray;
@@ -95,6 +100,7 @@ p {
   flex-direction: column;
   align-items: space-between;
   justify-content: center;
+  width: 100%;
 
 }
 button {
@@ -108,5 +114,48 @@ button {
   border: solid 1px white;
   text-transform: uppercase;
   font-size: 100%;
+  opacity: 0.8;
 }
+
+button:hover {
+  opacity: 100;
+  font-size: 110%;
+}
+
+@media only screen and (max-width: 1024px) {
+   div, div.info, div.application {
+    width: 75%;
+  }
+  button {
+  font-size: 75%;
+  }
+  button:hover {
+    font-size: 75%;
+  }
+  .flex-display {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  div, div.info, div.application {
+    width: 50%;
+  }
+  button {
+  width: 60%;
+  font-size: 50%;
+  }
+  button:hover {
+    font-size: 50%;
+  }
+  .flex-display {
+    width: 50%;
+  }
+  div {
+    flex-direction: column;
+  }
+}
+
+
+
 </style>

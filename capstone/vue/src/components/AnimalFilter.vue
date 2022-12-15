@@ -37,7 +37,18 @@ export default {
   letter-spacing: 5px;
   border-bottom: 5px solid cornflowerblue;  
   transition: all 0.3s ease-in-out;
+}
 
+@media only screen and (max-width: 1024px) {
+ .well {
+   width: 75%;
+ }
+}
+
+@media only screen and (max-width: 550px) {
+ .well {
+   width: 75%;
+ }
 }
 
 </style>
