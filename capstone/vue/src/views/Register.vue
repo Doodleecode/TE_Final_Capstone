@@ -1,8 +1,8 @@
 <template>
   <div id="register" class="text-center">
     <form class="form-register" @submit.prevent="register">
-      <h1 id="page-title" class="h3 mb-3 font-weight-normal">Sign Up</h1>
-      <div class="alert alert-danger" role="alert" v-if="registrationErrors">
+      <h1 style="text-align:center" id="page-title" class="h3 mb-3 font-weight-normal">Sign Up</h1>
+      <div style="text-align:center" id="validation-error" class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
       </div>
       <label for="username" class="sr-only">Username</label>
@@ -97,11 +97,18 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
 #register {
-  display: flex;
+  display: block;
   text-align: center;
   font-family: 'Oxygen', sans-serif;
 }
 
+#validation-error {
+  color:white;
+  padding-top: 0px;
+  padding-bottom: 15px;
+  font-size: 20px;
+  text-decoration: underline;
+}
 form {
   display: inline-block;
   margin-left: auto;
@@ -119,7 +126,6 @@ form {
 #page-title {
   text-transform: uppercase;
   font-weight: 150;
-  padding-bottom: 40px;
   color: white;
   text-decoration: underline;
   text-decoration-color: cornflowerblue;

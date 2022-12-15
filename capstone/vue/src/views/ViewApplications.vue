@@ -25,13 +25,16 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
 
 h1 {
+  text-transform: uppercase;
+  font-weight: 150;
   text-align: center;
   font-family: 'Oxygen', sans-serif;
   color:  white;
   text-decoration: underline;
   text-decoration-color: cornflowerblue;
   background-color: rgb(122, 118, 118);
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;;
   margin-top: 10px;
   margin-bottom: -10px;
   border: solid white 3px;

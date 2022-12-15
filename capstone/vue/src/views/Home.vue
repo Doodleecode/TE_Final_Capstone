@@ -36,7 +36,7 @@ export default {
   border: solid 3px white;
   border-top: none;
   color: lightgray;
-    background-repeat: no-repeat;
+  background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
 }
@@ -68,9 +68,8 @@ export default {
 }
 #title {
   display: flex;
- 
   color: white;
-  font-size: 85px;
+  font-size: 75px;
 }
 .animal-filter.All {
   background-image: url("../assets/cat_and_dog.png");

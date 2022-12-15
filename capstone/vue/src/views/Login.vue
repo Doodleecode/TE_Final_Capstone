@@ -2,12 +2,12 @@
   <div id="login" class="text-center">
     <form class="form-signin" @submit.prevent="login">
       <h1 style="text-align:center" id="page-title" class="h3 mb-3 font-weight-normal">Sign In</h1>
-      <div 
+      <div style="text-align:center"
         class="alert alert-danger"
         role="alert"
         v-if="invalidCredentials"
       >Invalid username and password!</div>
-      <div style="text-align:center"
+      <div
         class="alert alert-success"
         role="alert"
         v-if="this.$route.query.registration"
@@ -90,9 +90,11 @@ export default {
 
 .alert {
   color: white;
-  font-size: 15px;
+  font-size: 20px;
   padding-bottom: 15px;
+  text-decoration: underline;
 }
+
 form {
   display: inline-block;
   margin-left: auto;

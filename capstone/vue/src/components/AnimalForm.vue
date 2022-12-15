@@ -6,7 +6,7 @@
       {{ errorMsg }}
     </div>
     <form v-on:submit.prevent="addAnimal">
-      <h1 id="animal-title">Add an Adoptable Pet</h1>
+      <h1 id="animal-title">Add/update an Adoptable Pet</h1>
       <div>
         <div class="form-element">
           <label for="name">Name:</label>

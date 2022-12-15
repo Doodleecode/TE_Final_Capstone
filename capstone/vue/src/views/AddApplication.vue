@@ -2,12 +2,13 @@
 <div>
   <h1 v-if="!isUser">Please sign in before submitting an application</h1>
   <div id="application" v-else>
+    <h1> VOLUNTEER APPLICATION</h1>
     <form v-on:submit.prevent="addApplication">
       <div id="grid">
-        <h1 id="info1">Are you interested in supporting Ruff Starts, Purrfect Hearts?</h1>
+        <h2 id="info1">Are you interested in supporting Ruff Starts, Purrfect Hearts?</h2>
         <div class="below-title">
           <h3 style="text-align:center">
-            Start by filling out an application for review! Please fill out
+            Start by filling out an application to volunteer for us to review! Please fill out
             all required fields. It may take up to a week to approve to your
             application.
           </h3>
@@ -249,16 +250,38 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
 
-#info1 {
-  grid-area: info1;
+/* #application {
+  display: flex;
+  justify-content: flex-end;
+} */
+
+h1 {
+  background-color: rgb(122, 118, 118);
   font-size: 35px;
   color: white;
   text-align: center;
   text-transform: uppercase;
   text-decoration: underline;
   text-decoration-color: cornflowerblue;
-
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: solid white 3px;
+  border-bottom: none;
+  /* width: 50%; */
 }
+
+#info1 {
+  grid-area: info1;
+  font-size: 25px;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-color: cornflowerblue;
+}
+
 .below-title {
   grid-area: below;
   margin-bottom: 30px;
@@ -331,10 +354,12 @@ form {
   margin-right: auto;
   text-align: left;
   border: 3px solid white;
+  border-top: none;
   position: relative;
   height: 100%;
+  width: 100%;
   padding: 1vw;
-  margin: auto;
+  /* margin: auto; */
   background-color: rgb(122, 118, 118);
 }
 
