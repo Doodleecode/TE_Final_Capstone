@@ -41,8 +41,6 @@ export default {
 
 .contacts {
   background-color: rgb(122, 118, 118);
-  border: solid white 3px;
-  border-top: none;
   text-align: center;
   font-family: 'Oxygen', sans-serif;
 }
