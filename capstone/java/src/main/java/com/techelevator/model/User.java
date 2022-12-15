@@ -18,6 +18,11 @@ public class User {
 
    public User() { }
 
+   public User(int id, String authorities) {
+      this.id = id;
+      if(authorities != null) this.setAuthorities(authorities);
+   }
+
    public User(int id, String username, String password, String authorities) {
       this.id = id;
       this.username = username;

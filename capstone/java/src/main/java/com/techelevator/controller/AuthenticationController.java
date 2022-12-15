@@ -99,8 +99,8 @@ public class AuthenticationController {
 
     @PreAuthorize("hasAnyRole('ADMIN','VOLUNTEER')")
     @GetMapping(value = "/volunteers")
-    public List<Contact> getContactInfo() {
-        return contactDao.getAllContacts();
+    public List<ContactDTO> getContactInfo() {
+        return contactDao.getListOfContactDTO();
     }
 
 }
